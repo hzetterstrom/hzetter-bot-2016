@@ -94,7 +94,7 @@ var published = articles[i].published;
 var content = articles[i].content;
 
 //return bot.say("Hans\' Latest Tweets \n" + title "\n" + published "\n" content "\n")
-//return bot.say(author + title + published + content)
+return bot.say("Hans tweeted on ${published} \n about ${title} \n ${content} \n")
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
 
