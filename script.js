@@ -87,7 +87,7 @@ menunew: {
 
       // loop through the list of articles returned
      for (var i = 0; i < articles.length; i++) {
-		 return bot.say("here" + articles.length)
+		 return bot.say("here" + articles[i])
 
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
