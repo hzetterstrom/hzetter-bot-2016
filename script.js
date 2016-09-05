@@ -87,8 +87,13 @@ menunew: {
 
       // loop through the list of articles returned
      for (var i = 0; i < articles.length; i++) {
-		 return bot.say("here" + articles[i])
+		 
+var author = articles[i].feed.name;
+var title = articles[i].title;
+var published = articles[i].published;
+var content = articles[i].content;
 
+return bot.say("here" + title)
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
 
