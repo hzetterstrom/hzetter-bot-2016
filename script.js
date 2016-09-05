@@ -86,16 +86,17 @@ menunew: {
     feed(urls[j], function(err, articles) {
 
       // loop through the list of articles returned
-  //    for (var i = 0; i < articles.length; i++) {
+     for (var i = 0; i < articles.length; i++) {
 
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
 
         // check we have reached the end of our list of articles & urls
-   //     if( i === articles.length-1 && j === urls.length-1) {
+        if( i === articles.length-1 && j === urls.length-1) {
+			return bot.say("TWEETS DONE!")
  //         res.end("</body>\n</html>"); // end http response
-  //      } // else still have rss urls to check
-    //  } //  end inner for loop
+      } // else still have rss urls to check
+     } //  end inner for loop
     }); // end call to feed (feed-read) method
   } // end urls for loop
 	
