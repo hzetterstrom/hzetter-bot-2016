@@ -95,7 +95,7 @@ var content = articles[i].content;
 var link = articles[i].link;
 
 //return bot.say("Hans\' Latest Tweets \n" + title "\n" + published "\n" content "\n")
-return bot.say("@HansZed tweeted " +  content + link + "\n")
+return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
 
