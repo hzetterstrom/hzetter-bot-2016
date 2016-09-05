@@ -107,7 +107,7 @@ var content = articles[i].content;
     }); // end call to feed (feed-read) method
   } // end urls for loop
 	
-					return bot.say("TWEET TWEET")
+					return bot.say("TWEET END")
 				}
 			
 			
