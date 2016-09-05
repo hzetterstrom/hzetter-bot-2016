@@ -108,7 +108,7 @@ return bot.say("@HansZed tweeted " +  content + link + "\n")
     }); // end call to feed (feed-read) method
   } // end urls for loop
 	
-					return bot.say("TWEET END")
+					//return bot.say("TWEET END")
 				}
 			
 			
