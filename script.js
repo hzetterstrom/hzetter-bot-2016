@@ -93,7 +93,7 @@ var title = articles[i].title;
 var published = articles[i].published;
 var content = articles[i].content;
 
-return bot.say("here" + title)
+return bot.say("Hans\' Latest Tweets \n" + title "\n" + published "\n" content "\n")
         // stream article title (and what ever else you want) to client
  //       displayArticle(res, articles[i]);
 
@@ -106,7 +106,7 @@ return bot.say("here" + title)
     }); // end call to feed (feed-read) method
   } // end urls for loop
 	
-					return bot.say("TWEET TWEET")
+					//return bot.say("TWEET TWEET")
 				}
 			
 			
