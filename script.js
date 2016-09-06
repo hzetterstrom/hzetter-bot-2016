@@ -76,7 +76,7 @@ menunew: {
 			urls = [
 			"https://zapier.com/engine/rss/1617716/hanszed-tw1"
 			
-			]; // Example RSS Feeds
+			]; // RSS Feeds can be comma delimited
 	
 	
   // loop through our list of RSS feed urls
@@ -88,9 +88,6 @@ menunew: {
       // loop through the list of articles returned
      for (var i = 0; i < articles.length; i++) {
 		 
-var author = articles[i].feed.name;
-var title = articles[i].title;
-var published = articles[i].published;
 var content = articles[i].content;
 var link = articles[i].link;
 
@@ -100,14 +97,9 @@ return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
     }); // end call to feed (feed-read) method
   } // end urls for loop
 	
-					//return bot.say("TWEET END")
 				}
 			
 			
-
-
-			
-	//TWITTER
 	//OPEN CALENDAR
 	//Resume
 	//LAST ARTICLES
@@ -116,94 +108,7 @@ return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 			  
         
     },
-menureturn: {
 
-				//prompt: (bot) => bot.say(`OK! ${name}.\n Let\'s get down to work. ` +
-				//`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`))
-				
-				 // `How can I assist? %[See Hans Linkedin Profile](reply:LinkedIn) %[Hans Resume](reply:Resume)`))
-		//return bot.getProp('name')
-		
-		// .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-          //              'teach me how to do anything else!'))
-		
-		
-				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
-		
-        //receive: (bot, message) => {
-        //    return bot.getProp('name')
-        //        .then((name) => bot.say(`Hello again, ${name}!`))
-        //        .then(() => 'finish');
-        //}
-		
-				prompt: (bot,name) => bot.say(`Welcome Back.\n Let me know what information you\'d like to see. ` +
-				`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy)`), 
-				
-				
-				receive: (bot, message) => {
-				var BOTMSG = message.text;
-				var LBOTMSG = BOTMSG.toLowerCase();
-				
-			
-			if (LBOTMSG == "contact") {
-				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
-				.then(() => 'menureturn');
-			} else if (LBOTMSG == "analogy") {
-			var RNDNUM = Math.floor((Math.random()*3) +1);
-				if (RNDNUM === 1) {
-					return bot.say('Random Analogy 1 ' + RNDNUM)
-					 .then(() => 'menureturn');
-				} else if (RNDNUM === 2) {
-					return bot.say('Random Analogy 2 ' + RNDNUM)
-					 .then(() => 'menureturn');
-				} else if (RNDNUM === 3) {
-					return bot.say('Random Analogy 3 ' + RNDNUM)
-					 .then(() => 'menureturn');
-				} else if (LBOTMSG == "twitter") {
-					var request = new XMLHttpRequest();
-					request.open("GET", "https://zapier.com/engine/rss/1617716/hanszed-tw1", false);
-					request.send();
-					var xml = request.responseXML;
-					var items = xml.getElementsByTagName("item");
-
-					for(var i = 0; i < items.length; i++) {
-					var item = items[i];
-  
-					var description = item.getElementsByTagName("description");
-					var links = item.getElementsByTagName("link");
-  
-				//	for(var k = 0; k < links.length; k++) {
-       //console.log(description[k].childNodes[0].nodeValue);
-					var description$i = description[i].childNodes[0].nodeValue;
-      //console.log(description$k)
-					//}
-					//for(var j = 0; j < links.length; j++) {
-      // console.log(links[j].childNodes[0].nodeValue);
-					var links$i = links[i].childNodes[0].nodeValue;
-					//}
-				}
-
-					return bot.say($links1 + $description1)
-					.then(() => bot.say($links2 + $description2))
-					.then(() => bot.say($links3 + $description3))
-					
-				}
-				return bot.say('outside OK')
-			}
-			
-			
-
-
-			
-	//TWITTER
-	//OPEN CALENDAR
-	//Resume
-	//LAST ARTICLES
-	//ABOUT Hans
-		}
-			  
-        
-    },
 	
 	finish: {
         receive: (bot, message) => {
