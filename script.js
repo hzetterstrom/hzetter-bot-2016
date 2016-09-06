@@ -94,16 +94,8 @@ var published = articles[i].published;
 var content = articles[i].content;
 var link = articles[i].link;
 
-//return bot.say("Hans\' Latest Tweets \n" + title "\n" + published "\n" content "\n")
 return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-        // stream article title (and what ever else you want) to client
- //       displayArticle(res, articles[i]);
 
-        // check we have reached the end of our list of articles & urls
-        if( i === articles.length-1 && j === urls.length-1) {
-			return bot.say("TWEETS DONE!")
- //         res.end("</body>\n</html>"); // end http response
-      } // else still have rss urls to check
      } //  end inner for loop
     }); // end call to feed (feed-read) method
   } // end urls for loop
