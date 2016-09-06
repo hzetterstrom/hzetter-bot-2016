@@ -12,17 +12,19 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
 		return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b.jpg)')
-		.then(() => bot.say('Hi! I\'m Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
+		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
                 .then(() => 'askName');
 
 		}
     },
 
     askName: {
-        prompt: (bot) => bot.say('What\'s your name?'),
+        prompt: (bot) => bot.say('Before we begin, tell me a little about yourself.\n What\'s your name?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
+            .then(() => bot.say('Nice to meet you ${name}.')),
+            .then(() => prompt: (bot,reason) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`)),
                 .then(() => 'menunew');
         }
     },
