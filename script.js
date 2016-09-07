@@ -23,8 +23,12 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-            .then(() => bot.say('It\'s nice to meet you' + name))
-            //.then(() => prompt: (bot,reason) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`)),
+            .then(() => bot.say('It\'s nice to meet you ' + name))
+            }
+            prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`),
+            receive: (bot, message) => {
+            const reason = message.text;
+            return bot.setProp('reason', reason)
                 .then(() => 'menunew');
         }
     },
