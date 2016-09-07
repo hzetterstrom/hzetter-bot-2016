@@ -24,7 +24,7 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
             .then(() => bot.say('Nice to meet you ${name}.')),
-            .then(() => prompt: (bot,reason) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`)),
+            //.then(() => prompt: (bot,reason) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`)),
                 .then(() => 'menunew');
         }
     },
