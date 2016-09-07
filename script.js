@@ -51,7 +51,7 @@ menunew: {
 				
 				
 		
-				prompt: (bot,name) => bot.say(`It\'s nice to meet you.\n Let me know what information you\'d like to see. ` +
+				prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweets](reply:Tweets)`), 
 				
 				
