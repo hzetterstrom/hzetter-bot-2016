@@ -19,7 +19,7 @@ module.exports = new Script({
     },
 
     askName: {
-        prompt: (bot) => bot.say('Before we begin, tell me a little about yourself.\n What\'s your name?'),
+        prompt: (bot) => bot.say('Before we begin, tell me a little about yourself. What\'s your name?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
