@@ -24,16 +24,19 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
             .then(() => bot.say('It\'s nice to meet you ' + name))
-            
-            //prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend\Peer](reply:Peer) %[I\'m just curious](reply:curious)`),
-            //receive: (bot, message) => {
-            //const reason = message.text;
-            //return bot.setProp('reason', reason)
-            //}
-                .then(() => 'menunew');
+                .then(() => 'Reason');
         }
     },
 	
+	Reason: {
+	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
+            receive: (bot, message) => {
+            const reason = message.text;
+            return bot.setProp('reason', reason)
+            .then(() => 'menunew');
+            }
+            
+	},
 	
 menunew: {
 
