@@ -52,6 +52,8 @@ module.exports = new Script({
 	},
 	
 customMsg: {
+
+Processing: {
 	return bot.getProp('reason')
 	if (reason == "friend") {
 	return bot.say => ('Any friend of Hans is a friend of mine, ' + name)
@@ -60,6 +62,7 @@ customMsg: {
 	return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=160)')
 	,then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.')
 	,then(() => 'menuNew');
+	}
 	}
 },
 	
