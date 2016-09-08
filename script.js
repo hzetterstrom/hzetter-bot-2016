@@ -55,7 +55,7 @@ customMsg: {
 
 	//return bot.getProp('reason')
 	//if (reason == "friend") {
-	return bot.say => ('Any friend of Hans is a friend of mine, ' + name)
+	prompt: (bot) => bot.say('Any friend of Hans is a friend of mine, ' + name)
 	.then (() => 'menuNew');
 	//} else if {
 	//return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=160)')
