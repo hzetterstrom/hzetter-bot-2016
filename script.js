@@ -2,6 +2,7 @@
 
 const Script = require('smooch-bot').Script;
 var NEWBIE = 0;
+var reason;
 
 module.exports = new Script({
     processing: {
@@ -33,16 +34,16 @@ module.exports = new Script({
 	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
             receive: (bot, message) => {
             var ureason = message.text;
-            var reason = ureason.toLowerCase();
+            reason = ureason.toLowerCase();
 				
              if( reason.indexOf('friend') >= 0){
-             var reason = 'friend'
+             reason = 'friend'
              } else if( reason.indexOf('manager') >= 0){
-             var reason = 'manager'
+             reason = 'manager'
              } else if( reason.indexOf('recruiter') >= 0){
-             var reason = 'recruiter'
+             reason = 'recruiter'
              } else if( reason.indexOf('curious') >= 0){
-             var reason = 'curious'
+             reason = 'curious'
              }             
             return bot.setProp('reason', reason)
             .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
@@ -76,9 +77,6 @@ menuNew: {
 		
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
-				
-				if (reason == 'recruiter') {
-				
 				
 		
 				prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
