@@ -38,15 +38,15 @@ module.exports = new Script({
             var ureason = message.text;
             var reason = ureason.toLowerCase();
 				
-             if( reason.indexOf('friend') >= 0){
-             reason = 'friend'
-             } else if( reason.indexOf('manager') >= 0){
-             reason = 'manager'
-             } else if( reason.indexOf('recruiter') >= 0){
-             reason = 'recruiter'
-             } else if( reason.indexOf('curious') >= 0){
-             reason = 'curious'
-             }             
+            // if( reason.indexOf('friend') >= 0){
+            // reason = 'friend'
+            // } else if( reason.indexOf('manager') >= 0){
+            // reason = 'manager'
+            // } else if( reason.indexOf('recruiter') >= 0){
+            // reason = 'recruiter'
+            // } else if( reason.indexOf('curious') >= 0){
+            // reason = 'curious'
+            // }       
             return bot.setProp('reason', reason)
             .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
             .then(() => 'start');
