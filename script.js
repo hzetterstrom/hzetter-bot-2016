@@ -65,7 +65,13 @@ customMsg: {
 	//,then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.')
 	//,then(() => 'menuNew');
 	//}
-	return ('start');
+	 receive: (bot, message) => {
+            return bot.getProp('name')
+                .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
+                        'teach me how to do anything else!'))
+                .then(() => 'menunew');
+        }
+    }
 },
 	
 menuNew: {
