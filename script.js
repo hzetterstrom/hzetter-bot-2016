@@ -45,7 +45,10 @@ module.exports = new Script({
              var reason = 'curious'
              }             
             return bot.setProp('reason', reason)
-            .then(() => bot.say('reason' + reason))
+            .then(() => 'Great. I'll remember you next time you stop by ' + name))
+            If (reason == 'friend') {
+            return bot.say('Nice to meet you! Hans says hi')
+            }
             .then(() => 'menunew');
             }
             
@@ -65,6 +68,7 @@ menunew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 				
+				if (reason == 'recruiter') {
 				
 				
 		
