@@ -11,7 +11,8 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-		return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b.jpg)')
+        //http://0.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50
+		return bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
 		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
                 .then(() => 'askName');
 
