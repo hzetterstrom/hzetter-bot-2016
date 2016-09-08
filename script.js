@@ -54,7 +54,7 @@ module.exports = new Script({
 	
 customMsg: {
 
-	if (reason == "friend") {
+	if (reason === "friend") {
 	return bot.say => ('Any friend of Hans is a friend of mine, ' + name)
 	.then (() => 'menuNew');
 	} else if {
