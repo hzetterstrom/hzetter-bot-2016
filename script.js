@@ -32,8 +32,20 @@ module.exports = new Script({
 	Reason: {
 	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
             receive: (bot, message) => {
-            const reason = message.text;
+            var ureason = message.text;
+            var reason = ureason.toLowerCase();
+				
+             if( reason.indexOf('friend') >= 0){
+             var reason = 'friend'
+             } else if( reason.indexOf('manager') >= 0){
+             var reason = 'manager'
+             } else if( reason.indexOf('recruiter') >= 0){
+             var reason = 'recruiter'
+             } else if( reason.indexOf('curious') >= 0){
+             var reason = 'curious'
+             }             
             return bot.setProp('reason', reason)
+            .then(() => bot.say('reason' + reason))
             .then(() => 'menunew');
             }
             
@@ -103,6 +115,7 @@ var content = articles[i].content;
 var link = articles[i].link;
 
 return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+
 
      } //  end inner for loop
     }); // end call to feed (feed-read) method
