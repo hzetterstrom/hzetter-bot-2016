@@ -70,8 +70,8 @@ customMsg: {
                 .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
                         'teach me how to do anything else!'))
                 .then(() => 'menunew');
-        }
-    }
+      }
+    
 },
 	
 menuNew: {
