@@ -45,7 +45,7 @@ module.exports = new Script({
              var reason = 'curious'
              }             
             return bot.setProp('reason', reason)
-            .then(() => bot.say('Great. I'll remember you next time you stop by ' + name))
+            .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
             .then(() => 'customMsg');
             }
             
