@@ -29,14 +29,14 @@ module.exports = new Script({
         }
     },
 	
-	Reason: {
-	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
-            prompt: (bot,name) => bot.say(`What brings you here today? ` +
-				`%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just curious](reply:curious)`), 
-			
-			receive: (bot, message) => {
-            var ureason = message.text;
-            var reason = ureason.toLowerCase();
+//	Reason: {
+//	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
+ //           prompt: (bot,name) => bot.say(`What brings you here today? ` +
+//				`%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just curious](reply:curious)`), 
+//			
+//			receive: (bot, message) => {
+ //           var ureason = message.text;
+  //          var reason = ureason.toLowerCase();
 				
             // if( reason.indexOf('friend') >= 0){
             // reason = 'friend'
@@ -47,12 +47,12 @@ module.exports = new Script({
             // } else if( reason.indexOf('curious') >= 0){
             // reason = 'curious'
             // }       
-            return bot.setProp('reason', reason)
-            .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
-            .then(() => 'customMsg');
-            }
+//            return bot.setProp('reason', reason)
+//            .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
+//            .then(() => 'customMsg');
+ //           }
             
-	},
+//	},
 	
 //customMsg: {
 
