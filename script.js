@@ -25,13 +25,16 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
             .then(() => bot.say('It\'s nice to meet you ' + name))
-                .then(() => 'menuNew');
+                .then(() => 'Reason');
         }
     },
 	
 	Reason: {
 	     prompt: (bot) => bot.say('What brings you here today?' + `%[I\'m a Recruiter](reply:Recruiter) %[I\'m a Hiring Manager](reply:Manager) %[I\'m a Friend](reply:Friend) %[I\'m just curious](reply:curious)`),
-            receive: (bot, message) => {
+            prompt: (bot,name) => bot.say(`What brings you here today? ` +
+				`%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just curious](reply:curious)`), 
+			
+			receive: (bot, message) => {
             var ureason = message.text;
             var reason = ureason.toLowerCase();
 				
