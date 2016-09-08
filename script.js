@@ -49,7 +49,7 @@ module.exports = new Script({
              }             
             return bot.setProp('reason', reason)
             .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
-            .then(() => 'Reason');
+            .then(() => 'start');
             }
             
 	},
