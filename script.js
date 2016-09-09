@@ -1,7 +1,6 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-var NEWBIE = 0;
 
 module.exports = new Script({
     processing: {
