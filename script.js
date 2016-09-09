@@ -44,17 +44,17 @@ Reason: {
 			.then(() => 'menuNew');
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
-			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=160)')
+			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
 			.then(() => 'menuNew');           
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
-			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=160)')
+			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
 			.then(() => 'menuNew');
 			} else if( reason.indexOf('curious') >= 0){
              reason = 'curious'
-			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=160)')
+			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
              .then(() => 'menuNew');
 			 } else { 
@@ -95,7 +95,7 @@ menuNew: {
 			if ( lmenu.indexOf('contact') >= 0){
 				return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
 				.then(() => 'menuNew');
-			} else if ( lmenu.indexof('analogy') >= 0) {
+			} else  if ( lmenu.indexOf('analogy') >= 0){ 
 				var RNDNUM = Math.floor(Math.random() * 11);
 				if (RNDNUM = 1) {
 					return bot.say('Random Analogy 1 ' + RNDNUM)
