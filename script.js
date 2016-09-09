@@ -108,13 +108,12 @@ menuNew: {
 					return bot.say('Random Analogy 3 ' + RNDNUM)
 					 .then(() => 'menureturn');
 				} 
-				
-			} else if (LBOTMSG.indexof('tweet') >= 0) {
-			var feed = require('feed-read'),  // require the feed-read module
-			urls = [
-			"https://zapier.com/engine/rss/1617716/hanszed-tw1"
+			} else if (LBOTMSG.indexOf('tweet') >= 0){
+				var feed = require('feed-read'),  // require the feed-read module
+				urls = [
+				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
 			
-			]; // RSS Feeds can be comma delimited
+				]; // RSS Feeds can be comma delimited
 	
 	
 				// loop through our list of RSS feed urls
