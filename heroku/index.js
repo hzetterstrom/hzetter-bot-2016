@@ -77,7 +77,6 @@ function createBot(appUser) {
         avatarUrl,
         lock,
         store,
-		reason,
         userId
     });
 }
