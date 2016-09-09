@@ -93,19 +93,19 @@ menuNew: {
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 			
 			if ( lmenu.indexOf('contact') >= 0){
-				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
+				return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
 				.then(() => 'menuNew');
 			} else if ( lmenu.indexof('analogy') >= 0) {
 				var RNDNUM = Math.floor(Math.random() * 11);
 				if (RNDNUM = 1) {
 					return bot.say('Random Analogy 1 ' + RNDNUM)
-					 .then(() => 'menureturn');
+					 .then(() => 'menuNew');
 				} else if (RNDNUM = 2) {
 					return bot.say('Random Analogy 2 ' + RNDNUM)
-					 .then(() => 'menureturn');
+					 .then(() => 'menuNew');
 				} else if (RNDNUM = 3) {
 					return bot.say('Random Analogy 3 ' + RNDNUM)
-					 .then(() => 'menureturn');
+					 .then(() => 'menuNew');
 				} 
 			} 
 		else if ( lmenu.indexOf('tweet') >= 0){
