@@ -142,7 +142,7 @@ menuNew: {
 	//Resume
 	//LAST ARTICLES
 	//ABOUT Hans
-		}
+	//	}
 			  
         
     },
