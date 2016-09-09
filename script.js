@@ -1,6 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
+var reason;
 
 module.exports = new Script({
     processing: {
@@ -34,7 +35,7 @@ Reason: {
 			
 		receive: (bot, message) => {
         var ureason = message.text;
-        var reason = ureason.toLowerCase();
+        reason = ureason.toLowerCase();
 				
             if( reason.indexOf('friend') >= 0){
              reason = 'friend'
@@ -53,7 +54,7 @@ Reason: {
             
 	},
 	
-//customMsg: {
+customMsg: {
 
 //	return bot.getProp('reason')
 //	if (reason == "friend") {
@@ -65,7 +66,7 @@ Reason: {
 //	.then(() => 'menuNew');
 //	}
     
-//},
+},
 	
 menuNew: {
 
