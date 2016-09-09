@@ -49,7 +49,7 @@ Reason: {
       //return bot.setProp('reason', reason)
 	  return bot.getProp('name')
     	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
-          .then(() => 'start');
+          .then(() => 'customMsg');
         }
             
 	},
