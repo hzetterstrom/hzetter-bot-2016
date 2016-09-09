@@ -85,7 +85,7 @@ menuNew: {
 				
 		
 				prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
-				`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweets](reply:Tweets)`), 
+				`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 				
 				
 				receive: (bot, message) => {
@@ -93,11 +93,10 @@ menuNew: {
 				var LBOTMSG = BOTMSG.toLowerCase();
 				
 			
-			if (LBOTMSG == "contact") {
+			if (LBOTMSG.indexOf('contact') >= 0){
 				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
-				//NEWBIE+=1
 				.then(() => 'menureturn');
-			} else if (LBOTMSG == "analogy") {
+			} else if (LBOTMSG.indexof('analogy') >= 0) {
 				var RNDNUM = Math.floor(Math.random() * 11);
 				if (RNDNUM = 1) {
 					return bot.say('Random Analogy 1 ' + RNDNUM)
@@ -109,8 +108,8 @@ menuNew: {
 					return bot.say('Random Analogy 3 ' + RNDNUM)
 					 .then(() => 'menureturn');
 				} 
-				//return bot.say('outside OK')
-			} else if (LBOTMSG == "tweets") {
+				
+			} else if (LBOTMSG.indexof('tweet') >= 0) {
 			var feed = require('feed-read'),  // require the feed-read module
 			urls = [
 			"https://zapier.com/engine/rss/1617716/hanszed-tw1"
@@ -118,23 +117,23 @@ menuNew: {
 			]; // RSS Feeds can be comma delimited
 	
 	
-  // loop through our list of RSS feed urls
-  for (var j = 0; j < urls.length; j++) {
+				// loop through our list of RSS feed urls
+				for (var j = 0; j < urls.length; j++) {
 
-    // fetch rss feed for the url:
-    feed(urls[j], function(err, articles) {
+				// fetch rss feed for the url:
+				feed(urls[j], function(err, articles) {
 
-      // loop through the list of articles returned
-     for (var i = 0; i < articles.length; i++) {
+				// loop through the list of articles returned
+				for (var i = 0; i < articles.length; i++) {
 		 
-var content = articles[i].content;
-var link = articles[i].link;
+				var content = articles[i].content;
+				var link = articles[i].link;
 
-return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 
 
-     } //  end inner for loop
-    }); // end call to feed (feed-read) method
+				} //  end inner for loop
+			}); // end call to feed (feed-read) method
   } // end urls for loop
 	
 				}
