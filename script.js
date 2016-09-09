@@ -47,7 +47,8 @@ module.exports = new Script({
      //        reason = 'curious'
      //        }       
            // return bot.setProp('reason', reason)
-            return bot.say('Great. I\'ll remember you next time you stop by ' + name)
+		   return bot.getProp('name')
+            .then(() => bot.say('Great. I\'ll remember you next time you stop by ' + name))
             .then(() => 'start');
             }
             
