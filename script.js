@@ -83,11 +83,11 @@ menuNew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 				
-//		prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[Analogy](reply:analogy) %[Tweet](reply:tweet)`), 
+		prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[Analogy](reply:analogy) %[Tweet](reply:tweet)`), 
 			
-//		receive: (bot, message) => {
-//        var menu = message.text;
-//        lmenu = menu.toLowerCase();
+		receive: (bot, message) => {
+        var menu = message.text;
+        lmenu = menu.toLowerCase();
 		
 			//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
@@ -142,7 +142,7 @@ menuNew: {
 	//Resume
 	//LAST ARTICLES
 	//ABOUT Hans
-//		}
+		}
 			  
         
     },
