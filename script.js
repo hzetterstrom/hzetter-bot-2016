@@ -109,7 +109,7 @@ menuNew: {
 			//		 .then(() => 'menureturn');
 			//	} 
 		//	} 
-		else if (LBOTMSG.indexOf('tweet') >= 0){
+		else if ( LBOTMSG.indexOf('tweet') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
 				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
