@@ -89,14 +89,14 @@ menuNew: {
 				
 				
 				receive: (bot, message) => {
-				var BOTMSG = message.text;
-				var LBOTMSG = BOTMSG.toLowerCase();
+				var menu = message.text;
+				var lmenu = menu.toLowerCase();
 				
 			
-			if ( LBOTMSG.indexOf('contact') >= 0){
+			if ( lmenu.indexOf('contact') >= 0){
 				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
 				.then(() => 'menureturn');
-			} else if ( LBOTMSG.indexof('analogy') >= 0) {
+			} else if ( lmenu.indexof('analogy') >= 0) {
 				var RNDNUM = Math.floor(Math.random() * 11);
 				if (RNDNUM = 1) {
 					return bot.say('Random Analogy 1 ' + RNDNUM)
@@ -109,7 +109,7 @@ menuNew: {
 					 .then(() => 'menureturn');
 				} 
 			} 
-		else if ( LBOTMSG.indexOf('tweet') >= 0){
+		else if ( lmenu.indexOf('tweet') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
 				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
