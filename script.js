@@ -108,34 +108,34 @@ menuNew: {
 			//		 .then(() => 'menuNew');
 			//	} 
 			//} 
-		//else if ( lmenu.indexOf('tweet') >= 0){
-			//	var feed = require('feed-read'),  // require the feed-read module
-			//	urls = [
-			//	"https://zapier.com/engine/rss/1617716/hanszed-tw1"
-		//	
-		//		]; // RSS Feeds can be comma delimited
+		else if ( lmenu.indexOf('tweet') >= 0){
+				var feed = require('feed-read'),  // require the feed-read module
+				urls = [
+				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
+			
+				]; // RSS Feeds can be comma delimited
 	
 	
 				// loop through our list of RSS feed urls
-			//	for (var j = 0; j < urls.length; j++) {
+				for (var j = 0; j < urls.length; j++) {
 
 				// fetch rss feed for the url:
-//				feed(urls[j], function(err, articles) {
+				feed(urls[j], function(err, articles) {
 
 				// loop through the list of articles returned
-	//			for (var i = 0; i < articles.length; i++) {
+				for (var i = 0; i < articles.length; i++) {
 		 
-//				var content = articles[i].content;
-	//		var link = articles[i].link;
+				var content = articles[i].content;
+			var link = articles[i].link;
 
-		//		return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 
 
-//				} //  end inner for loop
-	//		}); // end call to feed (feed-read) method
- //} // end urls for loop
+				} //  end inner for loop
+			}); // end call to feed (feed-read) method
+ } // end urls for loop
 	
-	//			}
+				}
 			
 			
 	//OPEN CALENDAR
