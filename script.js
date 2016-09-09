@@ -46,7 +46,7 @@ Reason: {
              } else if( reason.indexOf('curious') >= 0){
              reason = 'curious'
              }       
-      return bot.setProp('reason', reason)
+      //return bot.setProp('reason', reason)
 	  return bot.getProp('name')
     	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
           .then(() => 'start');
