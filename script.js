@@ -92,10 +92,10 @@ menuNew: {
 			//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 			
-//			if ( lmenu.indexOf('contact') >= 0){
-//				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
-//				.then(() => 'menureturn');
-//			} else if ( lmenu.indexof('analogy') >= 0) {
+			if ( lmenu.indexOf('contact') >= 0){
+				return bot.say(`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`)
+				.then(() => 'menuNew');
+			} //else if ( lmenu.indexof('analogy') >= 0) {
 //				var RNDNUM = Math.floor(Math.random() * 11);
 //				if (RNDNUM = 1) {
 //					return bot.say('Random Analogy 1 ' + RNDNUM)
