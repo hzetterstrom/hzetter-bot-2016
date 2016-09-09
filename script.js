@@ -37,18 +37,18 @@ Reason: {
         var ureason = message.text;
         var reason = ureason.toLowerCase();
 				
-     //        if( reason.indexOf('friend') >= 0){
-     //        reason = 'friend'
-     //        } else if( reason.indexOf('manager') >= 0){
-      //       reason = 'manager'
-     //        } else if( reason.indexOf('recruiter') >= 0){
-     //        reason = 'recruiter'
-     //        } else if( reason.indexOf('curious') >= 0){
-     //        reason = 'curious'
-     //        }       
-           // return bot.setProp('reason', reason)
+            if( reason.indexOf('friend') >= 0){
+             reason = 'friend'
+             } else if( reason.indexOf('manager') >= 0){
+             reason = 'manager'
+             } else if( reason.indexOf('recruiter') >= 0){
+             reason = 'recruiter'
+             } else if( reason.indexOf('curious') >= 0){
+             reason = 'curious'
+             }       
+      return bot.setProp('reason', reason)
 	  return bot.getProp('name')
-    	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember you on future visits`))
+    	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
           .then(() => 'start');
         }
             
