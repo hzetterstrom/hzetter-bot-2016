@@ -41,7 +41,7 @@ Reason: {
              reason = 'friend'
 			 return bot.getProp('name')
 			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual friend.`))
-			.then(() => ('menuNew');
+			.then(() => 'menuNew');
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
