@@ -41,28 +41,29 @@ Reason: {
              reason = 'friend'
 			 return bot.getProp('name')
 			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual friend.`))
-			.then(() => 'menuNew');
+			
+			.then(() => setTimeout('menuNew', 3000));
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');           
+			.then(() => setTimeout('menuNew', 3000));         
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');
+			.then(() => setTimeout('menuNew', 3000));
 			} else if( reason.indexOf('curious') >= 0){
              reason = 'curious'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b?s=80)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-             .then(() => 'menuNew');
+            .then(() => setTimeout('menuNew', 3000));
 			 } else { 
       //return bot.setProp('reason', reason)
 	//  return bot.getProp('name')
     //	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
        //   .then(() => 'menuNew');
-	   return('menuNew');
+	   return(setTimeout('menuNew', 3000));
 	   }
         }
             
