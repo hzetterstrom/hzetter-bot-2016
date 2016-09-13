@@ -83,7 +83,7 @@ menuNew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 					
-	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[Analogy](reply:analogy) %[Tweet](reply:tweet) %[About James](reply:james)`), 
+	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
