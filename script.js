@@ -167,9 +167,24 @@ nextMenu:{
 		   if ( yn.indexOf('menu') >= 0){
 			   return('menuNew');
 			 
+		   } else {
+			   return('waitHere');
 		   }
 	   }
 	
+},
+
+waitHere: {
+	
+	receive: (bot, message) => {
+		var menucall = message.text;
+		if ( menucall.indexOf('menu') >= 0){
+			   return('menuNew');
+			 
+		   } else {
+			   return('waitHere');
+		   }
+	}
 },
 	customMsg: {
         receive: (bot, message) => {
