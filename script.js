@@ -42,23 +42,22 @@ Reason: {
              reason = 'friend'
 			 return bot.getProp('name')
 			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual friend.`))
-			.then(() => 'menuNew');
+		//	.then(() => 'menuNew');
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-			//.then(() => wait 50);
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');      
+		//	.then(() => 'menuNew');      
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');
+		//	.then(() => 'menuNew');
 			} else if( reason.indexOf('curious') >= 0){
              reason = 'visiting'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-            .then(() => 'menuNew');
+            //.then(() => 'menuNew');
 			 } else { 
       //return bot.setProp('reason', reason)
 	//  return bot.getProp('name')
@@ -66,6 +65,7 @@ Reason: {
        //   .then(() => 'menuNew');
 	   return('menuNew');
 	   }
+	   
         }
             
 	},
@@ -96,7 +96,7 @@ menuNew: {
 			
 			if ( lmenu.indexOf('contact') >= 0){
 				return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
-				.then(() => 'menuNew');
+				.then(() => 'nextMenu');
 			} //else  if ( lmenu.indexOf('analogy') >= 0){ 
 			//	var RNDNUM = Math.floor(Math.random() * 11);
 			//	if (RNDNUM = 1) {
@@ -112,7 +112,7 @@ menuNew: {
 			//} 
 			else if ( lmenu.indexOf('james') >= 0){
 				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
-			.then(() => 'menuNew');
+			.then(() => 'nextMenu');
 			}
 		else if ( lmenu.indexOf('tweet') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
@@ -141,6 +141,7 @@ menuNew: {
 				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
 				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
 				.then(() => bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`))
+				.then(() => 'nextMenu');
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
  } // end urls for loop
@@ -157,7 +158,19 @@ menuNew: {
         
     },
 	
+nextMenu:{
 	
+	prompt: (bot) => bot.say('Say Menu at any time to go to the Main Menu'),
+	
+	receive: (bot,message) => {
+		   var yn = message.text;
+		   if ( yn.indexOf('menu') >= 0){
+			   return('menuNew');
+			 
+		   }
+	   }
+	
+},
 	customMsg: {
         receive: (bot, message) => {
             return bot.getProp('name')
