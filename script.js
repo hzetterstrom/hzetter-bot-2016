@@ -134,6 +134,7 @@ menuNew: {
 				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=Right%20now%20I%27m%20talking%20to%20James%20-%20Chatbot%20%26%20virtual%20assistant%20to%20%40HansZed.%20Try%20it%20by%20texting%20(312)313-4267(Hans))`))
 				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
 				.then(() => bot.say('Or you can follow @HansZed by clicking on the link/button' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name=hanszed)`))
+				.then(() => bot.say('Connect with Hans on LinkedIn' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`))
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
  } // end urls for loop
