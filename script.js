@@ -83,7 +83,7 @@ menuNew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 					
-	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[Analogy](reply:analogy) %[Tweet](reply:tweet)`), 
+	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[Analogy](reply:analogy) %[Tweet](reply:tweet) %[About James](reply:james)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -108,6 +108,10 @@ menuNew: {
 			//		 .then(() => 'menuNew');
 			//	} 
 			//} 
+			else if ( lmenu.indexOf('james') >= 0){
+				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans. I was created and then customized on smooch using the smoochbot framework. I tie into Twilio for SMS. My code runs out of Heroku and the code itself is in the github repository.') 
+			.then(() => 'menuNew');
+			}
 		else if ( lmenu.indexOf('tweet') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
