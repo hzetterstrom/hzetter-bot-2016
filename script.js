@@ -32,7 +32,7 @@ module.exports = new Script({
 	
 Reason: {
 	    
-		prompt: (bot,name) => bot.say(`What brings you here today? ` + `%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just curious](reply:curious)`), 
+		prompt: (bot,name) => bot.say(`Tell me a little more about you? ` + `%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just visiting](reply:visiting)`), 
 			
 		receive: (bot, message) => {
         var ureason = message.text;
@@ -47,7 +47,7 @@ Reason: {
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			//.then(() => wait 50);
-			.then(() => wait 500, -> (bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.')))
+			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
 			.then(() => 'menuNew');      
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
@@ -55,7 +55,7 @@ Reason: {
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
 			.then(() => 'menuNew');
 			} else if( reason.indexOf('curious') >= 0){
-             reason = 'curious'
+             reason = 'visiting'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
             .then(() => 'menuNew');
@@ -84,8 +84,8 @@ menuNew: {
 		
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
-					
-	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 
+	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 			
+	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[His Contact Info](reply:contact)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
