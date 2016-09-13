@@ -129,8 +129,9 @@ menuNew: {
 			var link = articles[i].link;
 
 				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
 			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
-				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=Chatbots\%20are\%20taking\%20over\.\%20James\%20\-\%20Virtual\%20Assistant\%20to\%20\%40HansZed\%20and\%20I\%20are\%20chatting\.\.\.)` `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
+				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=Chatbots\%20are\%20taking\%20over\.\%20James\%20\-\%20Virtual\%20Assistant\%20to\%20\%40HansZed\%20and\%20I\%20are\%20chatting\.\.\.)`))
 				
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
