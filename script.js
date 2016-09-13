@@ -2,6 +2,7 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
+var wait = require('wait');
 
 module.exports = new Script({
     processing: {
