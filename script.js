@@ -131,7 +131,7 @@ menuNew: {
 				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
 			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
-				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=Chatbots\%20are\%20taking\%20over\.\%20James\%20\-\%20Virtual\%20Assistant\%20to\%20\%40HansZed\%20and\%20I\%20are\%20chatting\.\.\.)`))
+				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=Right\%20now\%20I\'m\%20talking\%20to\%20James\%20\-\%20Personal\%20Assistant\%20to\%20\%40HansZed\%20Try\%20it\%20by\%20texting\%20\(312\)313\-4267\(Hans\))`))
 				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
 				.then(() => bot.say('Or you can follow @HansZed by clicking on the link/button' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name=hanszed)`))
 				} //  end inner for loop
