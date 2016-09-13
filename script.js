@@ -135,9 +135,9 @@ menuNew: {
 				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
 			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
-				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://twitter.com/intent/tweet\?text=I%27m%20talking%20to%20James%2C%20%40HansZed%27s%20Chatbot%20%26%20Personal%20Assistant.%20Try%20it!%20Text%20(312)313-4267\(Hans\))`))
+				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/Q7CEzL)`))
 				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
-				.then(() => bot.say('Or you can follow @HansZed by clicking on the link/button' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name=hanszed)`))
+				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/a1YWao)`))
 				.then(() => bot.say('Connect with Hans on LinkedIn' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`))
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
