@@ -85,7 +85,7 @@ menuNew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 			
-	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[His Contact Info](reply:contact)`), 
+	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[About Hans](reply:about)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -94,7 +94,7 @@ menuNew: {
 			//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 			
-			if ( lmenu.indexOf('contact') >= 0){
+			if ( lmenu.indexOf('about') >= 0){
 				return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
 				.then(() => 'nextMenu');
 			} //else  if ( lmenu.indexOf('analogy') >= 0){ 
@@ -164,7 +164,8 @@ nextMenu:{
 	
 	receive: (bot,message) => {
 		   var yn = message.text;
-		   if ( yn.indexOf('menu') >= 0){
+		   var lyn = yn.toLowerCase();
+		   if ( lyn.indexOf('menu') >= 0){
 			   return('menuNew');
 			 
 		   } else {
@@ -178,7 +179,8 @@ waitHere: {
 	
 	receive: (bot, message) => {
 		var menucall = message.text;
-		if ( menucall.indexOf('menu') >= 0){
+		var lmenucall = menucall.toLowerCase();
+		if ( lmenucall.indexOf('menu') >= 0){
 			   return('menuNew');
 			 
 		   } else {
