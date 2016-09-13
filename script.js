@@ -109,7 +109,7 @@ menuNew: {
 			//	} 
 			//} 
 			else if ( lmenu.indexOf('james') >= 0){
-				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom. I was created and then customized on Smooch using the Smoochbot framework. I tie into Twilio for SMS. My code runs out of Heroku and the code itself is in github.') 
+				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			.then(() => 'menuNew');
 			}
 		else if ( lmenu.indexOf('tweet') >= 0){
