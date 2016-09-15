@@ -85,7 +85,7 @@ menuNew: {
 		
 				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
 	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 			
-	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[About Hans](reply:about)`), 
+	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -94,8 +94,29 @@ menuNew: {
 			//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 			
-			if ( lmenu.indexOf('about') >= 0){
-				return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
+			if ( lmenu.indexOf('info') >= 0){
+				prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+				receive: (bot, message2) => {
+			var innermenu = message2.text;
+			var linnermenu = innermenu.toLowerCase();
+			if ( linnermenu.indexOf('email') >= 0){
+				
+				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
+				.then(() => 'nextMenu');
+				
+			}
+			else if ( linnermenu.indexOf('text') >= 0){
+				
+				return bot.say('Hans\' sms # is 813-408-4511')
+				.then(() => 'nextMenu');
+				
+			} else if ( linnermenu.indexOf('menu') >= 0){
+				
+				return ('menuNew');
+				
+			}
+				
+				//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
 				.then(() => 'nextMenu');
 			} //else  if ( lmenu.indexOf('analogy') >= 0){ 
 			//	var RNDNUM = Math.floor(Math.random() * 11);
