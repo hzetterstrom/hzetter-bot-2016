@@ -98,7 +98,7 @@ work: {
 			return bot.say(`Hans\' latest experiences include:\n`)	
 			.then(() => bot.say(`•	Designed and implemented organization-wide Kanban room that visually represents impact of decision-making, team collaboration, and performance against business and product KPIs.\n`))
 			.then(() => bot.say(`•	Led the change in SDLC methodologies from Waterfall to Agile, and supported process and culture to create a team devoted to the spirit of the Agile Manifesto.\n`))
-			.then(() => bot.say(`•	•	Reorganized company structure to create Product Managers that better represent product lines using business model canvases, product roadmaps, qualitative research methods, and KPI management that resulted in more autonomy and a customer-centered focus.\n`))
+			.then(() => bot.say(`•	Reorganized company structure to create Product Managers that better represent product lines using business model canvases, product roadmaps, qualitative research methods, and KPI management that resulted in more autonomy and a customer-centered focus.\n`))
 			.then(() => 'work');
 				
 				
