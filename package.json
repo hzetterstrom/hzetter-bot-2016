@@ -15,6 +15,7 @@
 	"feed-read": "^0.0.1",
 	"wait": "^0.1.0",
     "smooch-bot": "^1.0.1",
+	"twilio": "^2.9.3",
     "smooch-core": "^0.0.15"
   },
   "devDependencies": {
