@@ -77,8 +77,7 @@ menuNew: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('info') >= 0){
-			//return bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
-		//return bot.say('what more can I tell you about Hans?')
+		
 		return('info');
 		//	.then(() => 'info');
 //			prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
@@ -171,7 +170,7 @@ nextMenu:{
 
 info: {
 
-prompt: (bot) => bot.say('we are inside info'),
+prompt: (bot) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + 'Or menu to return to the main menu'),
 //bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
