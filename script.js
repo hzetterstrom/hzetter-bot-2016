@@ -75,21 +75,30 @@ menuTop: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('info') >= 0){
-			//return bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
 			return('infoTop');
 			} else if ( lmenu.indexOf('work') >= 0){
-			return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
-			.then(() => 'work');
+			return('work');
 			} else if ( lmenu.indexOf('thoughts') >= 0){
-			return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
-			.then(() => 'thoughts');
+			return('thoughts');
 			}
 		}			
 },
 
 work: {
-	
-	//return (menuTop);
+	prompt: (bot,name) => bot.say('Hans\' Work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume)`), 
+			
+		receive: (bot, message) => {
+        var menu = message.text;
+        var lmenu = menu.toLowerCase();
+			
+			if ( lmenu.indexOf('skills') >= 0){
+			return bot.say(`Hans considers his primary skills to be:\nAgile Methodologies\nStrategic Planning\nEnterprise Architecture\nLeading Teams\nTalent Development` ) 
+			.then(() => 'menuTop');
+			} else if ( lmenu.indexOf('experience') >= 0){
+				
+			} else if ( lmenu.indexOf('resume') >= 0){
+				
+			}
 },
 
 thoughts: {
