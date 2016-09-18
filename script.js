@@ -187,7 +187,18 @@ prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Han
 			}
 			else if ( linnermenu.indexOf('text') >= 0){
 				
-				return bot.say('Hans\' sms # is 813-408-4511');
+				var twilio = require('twilio');
+ 
+				// Find your account sid and auth token in your Twilio account Console.
+				//var client = twilio('TWILIO_ACCOUNT_SID', 'TWILIO_AUTH_TOKEN');
+ 
+				// Send the text message.
+				client.sendMessage({
+				to: '813-408-4511',
+				from: '312-313-4267',
+				body: 'Hello from Twilio!'
+				});
+			return bot.say('We sent an SMS to Hans');
 
 }
 }
