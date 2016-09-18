@@ -186,8 +186,19 @@ prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Han
 				
 			}
 			else if ( linnermenu.indexOf('text') >= 0){
+			return('sendSMS');
 				
-				var twilio = require('twilio');
+
+			}
+}
+},
+
+sendSMS: {
+	prompt: (bot) => bot.say('Ok, we do can that. Whatever you send in your next message to me, I\'ll relay straight to Hans. Be sure to include a call/text back number and your name.'),
+	receive: (bot,message3) => {
+		
+	
+	var twilio = require('twilio');
  
 				// Find your account sid and auth token in your Twilio account Console.
 				var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
@@ -196,12 +207,10 @@ prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Han
 				client.sendMessage({
 				to: '813-408-4511',
 				from: '312-313-4267',
-				body: 'Hello from Twilio!'
+				body: 'message3.text'
 				});
 			return bot.say('We sent an SMS to Hans');
-
-}
-}
+	}
 },
 waitHere: {
 	
