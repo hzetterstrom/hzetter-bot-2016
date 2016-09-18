@@ -77,32 +77,8 @@ menuNew: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('info') >= 0){
-		
-		return('info');
-		//	.then(() => 'info');
-//			prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
-	//			receive: (bot, message2) => {
-		//	var innermenu = message2.text;
-			//var linnermenu = innermenu.toLowerCase();
-		//	if ( linnermenu.indexOf('email') >= 0){
-				
-//				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
-//				.then(() => 'nextMenu');
-				
-//			}
-//			else if ( linnermenu.indexOf('text') >= 0){
-//				
-//				return bot.say('Hans\' sms # is 813-408-4511')
-//				.then(() => 'nextMenu');
-//				
-//			} else if ( linnermenu.indexOf('menu') >= 0){
-//				
-//				return ('menuNew');
-//				
-//			}
-	//			
-	//			//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
-	//			.then(() => 'nextMenu');
+		return bot.say('What more can I tell you about Hans?' + '%[Get Hans\' contact info](http://goo.gl/V2CrZR)' ) 
+			.then(() => 'info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
 				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
@@ -172,7 +148,7 @@ info: {
 
 
 //prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
-prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Hans](https://goo.gl/rnkPq9)' ),
+prompt: (bot) => bot.say(`%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
 //+ `%[Email Hans](reply:email) %[Text Hans](reply:text)`
 //bot.say(`%[Contact Info](https://www.google.com)` + '\nOr say menu to return to the main menu'),
 //bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
@@ -209,7 +185,7 @@ sendSMS: {
 				from: '312-313-4267',
 				body: message3.text
 				});
-			return bot.say('We sent an SMS to Hans');
+			return bot.say('We sent a text to Hans. He usually replies pretty quickly.');
 	}
 },
 waitHere: {
@@ -267,3 +243,28 @@ waitHere: {
 	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 
 		//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
 				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
+				
+						//	.then(() => 'info');
+//			prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+	//			receive: (bot, message2) => {
+		//	var innermenu = message2.text;
+			//var linnermenu = innermenu.toLowerCase();
+		//	if ( linnermenu.indexOf('email') >= 0){
+				
+//				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
+//				.then(() => 'nextMenu');
+				
+//			}
+//			else if ( linnermenu.indexOf('text') >= 0){
+//				
+//				return bot.say('Hans\' sms # is 813-408-4511')
+//				.then(() => 'nextMenu');
+//				
+//			} else if ( linnermenu.indexOf('menu') >= 0){
+//				
+//				return ('menuNew');
+//				
+//			}
+	//			
+	//			//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
+	//			.then(() => 'nextMenu');
