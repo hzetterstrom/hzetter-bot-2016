@@ -190,7 +190,7 @@ prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Han
 				var twilio = require('twilio');
  
 				// Find your account sid and auth token in your Twilio account Console.
-				var client = twilio('TWILIO_ACCOUNT_SID', 'TWILIO_AUTH_TOKEN');
+				var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
  
 				// Send the text message.
 				client.sendMessage({
