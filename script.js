@@ -99,6 +99,7 @@ work: {
 			} else if ( lmenu.indexOf('resume') >= 0){
 				
 			}
+		}
 },
 
 thoughts: {
