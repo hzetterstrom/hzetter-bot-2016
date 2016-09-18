@@ -59,14 +59,87 @@ Reason: {
             .then(() => 'menuNew');
 			 } else { 
      
-	   return('menuNew');
+	   return('menuTop');
 	   }
 	   
         }
             
 	},
 	
+menuTop: {
 	
+		prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
+			
+		receive: (bot, message) => {
+        var menu = message.text;
+        var lmenu = menu.toLowerCase();
+			
+			if ( lmenu.indexOf('info') >= 0){
+			return bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
+			.then(() => 'infoTop');
+			} else if ( lmenu.indexOf('work') >= 0){
+			return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
+			.then(() => 'work');
+			} else if ( lmenu.indexOf('thoughts') >= 0){
+			return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
+			.then(() => 'thoughts');
+			}
+		}			
+},
+
+work: {
+	
+	//return (menuTop);
+},
+
+thoughts: {
+	//return (menuTop);
+	
+},
+
+infoTop:{
+	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[About James](reply:James)`), 
+			
+		receive: (bot, message) => {
+        var menu = message.text;
+        var lmenu = menu.toLowerCase();
+			
+			if ( lmenu.indexOf('contact') >= 0){
+				return bot.say(`%[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
+			.then(() => 'info');
+			} 
+			else if ( lmenu.indexOf('james') >= 0){
+				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
+			.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
+			.then(() => 'nextMenu');
+			}
+		}
+},
+
+info: {
+
+
+//prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
+prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
+//+ `%[Email Hans](reply:email) %[Text Hans](reply:text)`
+//bot.say(`%[Contact Info](https://www.google.com)` + '\nOr say menu to return to the main menu'),
+//bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+ 			receive: (bot, message2) => {
+			var innermenu = message2.text;
+			var linnermenu = innermenu.toLowerCase();
+			if ( linnermenu.indexOf('email') >= 0){
+				
+				return bot.say('Hans\' email is hans.zetterstrom@gmail.com');
+//				.then(() => 'nextMenu');
+				
+			}
+			else if ( linnermenu.indexOf('text') >= 0){
+			return('sendSMS');
+				
+
+			}
+}
+},
 menuNew: {
 
 			
@@ -77,13 +150,10 @@ menuNew: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('info') >= 0){
-		return bot.say('What more can I tell you about Hans?' + '%[Get Hans\' contact info](http://goo.gl/V2CrZR)' ) 
+		return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
 			.then(() => 'info');
 			} 
-			else if ( lmenu.indexOf('james') >= 0){
-				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
-			.then(() => 'nextMenu');
-			}
+			
 		else if ( lmenu.indexOf('tweet') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
@@ -144,30 +214,7 @@ nextMenu:{
 	
 },
 
-info: {
 
-
-//prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
-prompt: (bot) => bot.say(`%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
-//+ `%[Email Hans](reply:email) %[Text Hans](reply:text)`
-//bot.say(`%[Contact Info](https://www.google.com)` + '\nOr say menu to return to the main menu'),
-//bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
- 			receive: (bot, message2) => {
-			var innermenu = message2.text;
-			var linnermenu = innermenu.toLowerCase();
-			if ( linnermenu.indexOf('email') >= 0){
-				
-				return bot.say('Hans\' email is hans.zetterstrom@gmail.com');
-//				.then(() => 'nextMenu');
-				
-			}
-			else if ( linnermenu.indexOf('text') >= 0){
-			return('sendSMS');
-				
-
-			}
-}
-},
 
 sendSMS: {
 	prompt: (bot) => bot.say('Ok, we do can that. Whatever you send in your next message to me, I\'ll relay straight to Hans. Be sure to include a call/text back number and your name.'),
