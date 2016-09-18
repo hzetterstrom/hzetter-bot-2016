@@ -207,7 +207,7 @@ sendSMS: {
 				client.sendMessage({
 				to: '813-408-4511',
 				from: '312-313-4267',
-				body: 'message3.text'
+				body: message3.text
 				});
 			return bot.say('We sent an SMS to Hans');
 	}
