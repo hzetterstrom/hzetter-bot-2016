@@ -85,19 +85,21 @@ menuTop: {
 },
 
 work: {
-	prompt: (bot,name) => bot.say('Hans\' Work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume)`), 
+	prompt: (bot,name) => bot.say('Hans\' Work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			return bot.say(`Hans considers his primary skills to be:\nAgile Methodologies\nStrategic Planning\nEnterprise Architecture\nLeading Teams\nTalent Development` ) 
-			.then(() => 'menuTop');
+			return bot.say(`Hans considers his primary skills to be:\nAgile Methodologies\nStrategic Planning\nEnterprise Architecture\nLeading Teams\nTalent Development\n` ) 
+			.then(() => 'work');
 			} else if ( lmenu.indexOf('experience') >= 0){
 				
 			} else if ( lmenu.indexOf('resume') >= 0){
 				
+		} else if ( lmenu.indexOf('menu' || 'main') >= 0){
+				return('menuTop');
 			}
 		}
 },
@@ -119,7 +121,7 @@ infoTop:{
 			.then(() => 'info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
-				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
+				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework. I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
 			.then(() => 'nextMenu');
 			}
