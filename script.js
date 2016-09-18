@@ -12,7 +12,6 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-        //http://0.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50
 		return bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
 		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
                 .then(() => 'askName');
@@ -59,10 +58,7 @@ Reason: {
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
             .then(() => 'menuNew');
 			 } else { 
-      //return bot.setProp('reason', reason)
-	//  return bot.getProp('name')
-    //	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
-       //   .then(() => 'menuNew');
+     
 	   return('menuNew');
 	   }
 	   
@@ -73,64 +69,38 @@ Reason: {
 	
 menuNew: {
 
-				//prompt: (bot) => bot.say(`OK! ${name}.\n Let\'s get down to work. ` +
-				//`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`))
-				
-				 // `How can I assist? %[See Hans Linkedin Profile](reply:LinkedIn) %[Hans Resume](reply:Resume)`))
-		//return bot.getProp('name')
-		
-		// .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-          //              'teach me how to do anything else!'))
-		
-		
-				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
-	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 			
+			
 	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
         var lmenu = menu.toLowerCase();
-		
-			//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
-				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
 			
 			if ( lmenu.indexOf('info') >= 0){
-				prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
-				receive: (bot, message2) => {
-			var innermenu = message2.text;
-			var linnermenu = innermenu.toLowerCase();
-			if ( linnermenu.indexOf('email') >= 0){
+//				prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+	//			receive: (bot, message2) => {
+		//	var innermenu = message2.text;
+			//var linnermenu = innermenu.toLowerCase();
+		//	if ( linnermenu.indexOf('email') >= 0){
 				
-				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
-				.then(() => 'nextMenu');
+//				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
+//				.then(() => 'nextMenu');
 				
-			}
-			else if ( linnermenu.indexOf('text') >= 0){
-				
-				return bot.say('Hans\' sms # is 813-408-4511')
-				.then(() => 'nextMenu');
-				
-			} else if ( linnermenu.indexOf('menu') >= 0){
-				
-				return ('menuNew');
-				
-			}
-				
-				//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
-				.then(() => 'nextMenu');
-			} //else  if ( lmenu.indexOf('analogy') >= 0){ 
-			//	var RNDNUM = Math.floor(Math.random() * 11);
-			//	if (RNDNUM = 1) {
-			//		return bot.say('Random Analogy 1 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} else if (RNDNUM = 2) {
-			//		return bot.say('Random Analogy 2 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} else if (RNDNUM = 3) {
-			//		return bot.say('Random Analogy 3 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} 
-			//} 
+//			}
+//			else if ( linnermenu.indexOf('text') >= 0){
+//				
+//				return bot.say('Hans\' sms # is 813-408-4511')
+//				.then(() => 'nextMenu');
+//				
+//			} else if ( linnermenu.indexOf('menu') >= 0){
+//				
+//				return ('menuNew');
+//				
+//			}
+	//			
+	//			//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
+	//			.then(() => 'nextMenu');
+			} 
 			else if ( lmenu.indexOf('james') >= 0){
 				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			.then(() => 'nextMenu');
@@ -218,3 +188,36 @@ waitHere: {
         }
     }
 });
+
+//unused code here
+//else  if ( lmenu.indexOf('analogy') >= 0){ 
+			//	var RNDNUM = Math.floor(Math.random() * 11);
+			//	if (RNDNUM = 1) {
+			//		return bot.say('Random Analogy 1 ' + RNDNUM)
+			//		 .then(() => 'menuNew');
+			//	} else if (RNDNUM = 2) {
+			//		return bot.say('Random Analogy 2 ' + RNDNUM)
+			//		 .then(() => 'menuNew');
+			//	} else if (RNDNUM = 3) {
+			//		return bot.say('Random Analogy 3 ' + RNDNUM)
+			//		 .then(() => 'menuNew');
+			//	} 
+			//} 
+			 //return bot.setProp('reason', reason)
+	//  return bot.getProp('name')
+    //	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
+       //   .then(() => 'menuNew');
+	   				//prompt: (bot) => bot.say(`OK! ${name}.\n Let\'s get down to work. ` +
+				//`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`))
+				
+				 // `How can I assist? %[See Hans Linkedin Profile](reply:LinkedIn) %[Hans Resume](reply:Resume)`))
+		//return bot.getProp('name')
+		
+		// .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
+          //              'teach me how to do anything else!'))
+		
+		
+				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
+	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 
+		//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
+				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
