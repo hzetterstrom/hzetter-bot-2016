@@ -41,22 +41,22 @@ Reason: {
              reason = 'friend'
 			 return bot.getProp('name')
 			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual friend.`))
-			.then(() => 'menuNew');
+			.then(() => 'menuTop');
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');      
+			.then(() => 'menuTop');      
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-			.then(() => 'menuNew');
+			.then(() => 'menuTop');
 			} else if( reason.indexOf('curious') >= 0){
              reason = 'visiting'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
-            .then(() => 'menuNew');
+            .then(() => 'menuTop');
 			 } else { 
      
 	   return('menuTop');
