@@ -76,7 +76,7 @@ menuTop: {
 			
 			if ( lmenu.indexOf('info') >= 0){
 			//return bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
-			.then(() => 'infoTop');
+			return('infoTop');
 			} else if ( lmenu.indexOf('work') >= 0){
 			return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
 			.then(() => 'work');
