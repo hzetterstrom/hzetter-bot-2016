@@ -77,7 +77,8 @@ menuNew: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('info') >= 0){
-//				prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+			info.call();
+//			prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
 	//			receive: (bot, message2) => {
 		//	var innermenu = message2.text;
 			//var linnermenu = innermenu.toLowerCase();
@@ -145,8 +146,7 @@ menuNew: {
 	//LAST ARTICLES
 	//ABOUT Hans
 		}
-			  
-        
+
     },
 	
 nextMenu:{
@@ -166,6 +166,24 @@ nextMenu:{
 	
 },
 
+info: {
+prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+			receive: (bot, message2) => {
+			var innermenu = message2.text;
+			var linnermenu = innermenu.toLowerCase();
+			if ( linnermenu.indexOf('email') >= 0){
+				
+				return bot.say('Hans\' email is hans.zetterstrom@gmail.com');
+//				.then(() => 'nextMenu');
+				
+			}
+			else if ( linnermenu.indexOf('text') >= 0){
+				
+				return bot.say('Hans\' sms # is 813-408-4511');
+
+}
+}
+},
 waitHere: {
 	
 	receive: (bot, message) => {
