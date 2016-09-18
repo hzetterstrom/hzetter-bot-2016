@@ -172,7 +172,7 @@ info: {
 
 
 //prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
-prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Follow Hans](https://goo.gl/rnkPq9)` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
+prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + '%[Follow Hans](https://goo.gl/rnkPq9)' + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
 
 //bot.say(`%[Contact Info](https://www.google.com)` + '\nOr say menu to return to the main menu'),
 //bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
