@@ -104,7 +104,9 @@ work: {
 				
 			} else if ( lmenu.indexOf('resume') >= 0){
 				
-		} else if ( lmenu.indexOf('menu' || 'main') >= 0){
+		} else if ( lmenu.indexOf('menu') >= 0){
+				return('menuTop');
+			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
 			}
 		}
