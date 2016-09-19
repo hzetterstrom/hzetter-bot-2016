@@ -45,17 +45,17 @@ Reason: {
              } else if( reason.indexOf('manager') >= 0){
              reason = 'manager'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
+			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
 			.then(() => 'menuTop');      
 		   } else if( reason.indexOf('recruiter') >= 0){
              reason = 'recruiter'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
+			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
 			.then(() => 'menuTop');
 			} else if( reason.indexOf('curious') >= 0){
              reason = 'visiting'
 			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implment the process of Agile but transform the culture too.'))
+			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
             .then(() => 'menuTop');
 			 } else { 
      
@@ -145,9 +145,10 @@ thoughts: {
 				var link = articles[i].link;
 
 				return bot.say(`Hans\' latest articles on medium include:\n` +  title + "\n"+ link + "\n")
-				.then(() => 'thoughts');
+				//.then(() => 'thoughts');
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
+			return('thoughts');
 			} // end urls for loop
 //	
 				} else if ( lmenu.indexOf('linkedin') >= 0){
@@ -178,10 +179,7 @@ thoughts: {
 				var link = articles[i].link;
 
 				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
-			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
 				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
-				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
 				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
 				.then(() => 'thoughts');
 				} //  end inner for loop
@@ -213,12 +211,8 @@ infoTop:{
 
 info: {
 
-
-//prompt: (bot) => bot.say(`What more can I tell you about Hans? ` + `%[Email Hans](reply:email) %[Text Hans](reply:text)` ),
 prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
-//+ `%[Email Hans](reply:email) %[Text Hans](reply:text)`
-//bot.say(`%[Contact Info](https://www.google.com)` + '\nOr say menu to return to the main menu'),
-//bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
+
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
 			var linnermenu = innermenu.toLowerCase();
@@ -235,62 +229,7 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 			}
 }
 },
-menuNew: {
 
-			
-	prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
-			
-		receive: (bot, message) => {
-        var menu = message.text;
-        var lmenu = menu.toLowerCase();
-			
-			if ( lmenu.indexOf('info') >= 0){
-		return bot.say('What more can I tell you about Hans?' + '%[Hans\' contact info](http://goo.gl/V2CrZR)' ) 
-			.then(() => 'info');
-			} 
-			
-		else if ( lmenu.indexOf('tweet') >= 0){
-				var feed = require('feed-read'),  // require the feed-read module
-				urls = [
-				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
-			
-				]; // RSS Feeds can be comma delimited
-	
-	
-				// loop through our list of RSS feed urls
-				for (var j = 0; j < urls.length; j++) {
-
-				// fetch rss feed for the url:
-				feed(urls[j], function(err, articles) {
-
-				// loop through the list of articles returned
-				for (var i = 0; i < articles.length; i++) {
-		 
-				var content = articles[i].content;
-			var link = articles[i].link;
-
-				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
-			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
-				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
-				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
-				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
-				.then(() => bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`))
-				.then(() => 'nextMenu');
-				} //  end inner for loop
-			}); // end call to feed (feed-read) method
- } // end urls for loop
-	
-				}
-			
-			
-	//OPEN CALENDAR
-	//Resume
-	//LAST ARTICLES
-	//ABOUT Hans
-		}
-
-    },
 	
 nextMenu:{
 	
@@ -381,32 +320,4 @@ waitHere: {
           //              'teach me how to do anything else!'))
 		
 		
-				//prompt: (bot) => bot.say(`OK!\n Let\'s get down to work. ` +
-	//prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Contact](reply:contact) %[AboutJames](reply:james) %[Tweet](reply:tweet)`), 
-		//	prompt: (bot,name) => bot.say(`Let me know what information you\'d like to see. ` +
-				//`%[Contact Hans](reply:Contact) %[Random Hans Analogy](reply:Analogy) %[Hans\' Latest Tweet](reply:Tweet)`), 
-				
-						//	.then(() => 'info');
-//			prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Get Hans\' contact info](http://goo.gl/V2CrZR)` + '\nOr menu to return to the main menu'),
-	//			receive: (bot, message2) => {
-		//	var innermenu = message2.text;
-			//var linnermenu = innermenu.toLowerCase();
-		//	if ( linnermenu.indexOf('email') >= 0){
-				
-//				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
-//				.then(() => 'nextMenu');
-				
-//			}
-//			else if ( linnermenu.indexOf('text') >= 0){
-//				
-//				return bot.say('Hans\' sms # is 813-408-4511')
-//				.then(() => 'nextMenu');
-//				
-//			} else if ( linnermenu.indexOf('menu') >= 0){
-//				
-//				return ('menuNew');
-//				
-//			}
-	//			
-	//			//return bot.say('OK. Click on either of these links' + `%[Import Hans\' contact info](http://goo.gl/V2CrZR) %[Hans\' Gravatar Profile](http://goo.gl/EbEPb5)`)
-	//			.then(() => 'nextMenu');
+	
