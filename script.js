@@ -223,7 +223,7 @@ infoTop:{
 			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
-				return('menuTop');
+				return('infoTop');
 			} else {
 				
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
