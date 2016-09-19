@@ -238,7 +238,7 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 			if ( linnermenu.indexOf('email') >= 0){
 				
 				return bot.say('Hans\' email is hans.zetterstrom@gmail.com');
-//				.then(() => 'nextMenu');
+				.then(() => 'infoTop');
 				
 			}
 			else if ( linnermenu.indexOf('text') >= 0){
@@ -248,7 +248,7 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 			} else {
 				
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
-				.then(() => 'info');
+				.then(() => 'infoTop');
 			}
 			return('infoTop');
 	}
@@ -292,6 +292,7 @@ sendSMS: {
 				body: message3.text
 				});
 			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.');
+			.then(() => 'infoTop');
 	}
 },
 waitHere: {
