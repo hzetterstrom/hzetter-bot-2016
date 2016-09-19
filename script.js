@@ -95,11 +95,8 @@ work: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			//return bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
-			bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
-			setTimeout(work, 3000);
-			
-		//	.then(() => 'work');
+			return bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
+			.then(() => 'work');
 			} else if ( lmenu.indexOf('experience') >= 0){
 			return bot.say(`Hans\' latest experiences include:\n`)	
 			.then(() => bot.say(`•	Designed and implemented organization-wide Kanban room that visually represents impact of decision-making, team collaboration, and performance against business and product KPIs.\n`))
