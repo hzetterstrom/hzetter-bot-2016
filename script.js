@@ -196,9 +196,13 @@ thoughts: {
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
 			return('thoughts');
 			} // end urls for loop
+			} else {
+				
+				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
+				.then(() => 'thoughts');
 			}
 			return('thoughts');
-}		
+	}		
 },
 
 infoTop:{
