@@ -250,8 +250,9 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'info');
 			}
+			return('infoTop');
 	}
-	return('infoTop');
+	
 },
 
 	
