@@ -184,7 +184,7 @@ thoughts: {
 			//	.then(() => bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
 				//.then(() => 'thoughts');
 				} //  end inner for loop
-				return('thoughts');
+				//return('thoughts');
 			}); // end call to feed (feed-read) method
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
 			return('thoughts');
