@@ -179,8 +179,8 @@ thoughts: {
 				var link = articles[i].link;
 
 				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
-				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
+			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
+				.then(() => bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
 				.then(() => 'thoughts');
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
