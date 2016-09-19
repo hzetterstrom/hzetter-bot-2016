@@ -85,7 +85,7 @@ menuTop: {
 },
 
 work: {
-	prompt: (bot,name) => bot.say('Hans\' Work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume) %[Main Menu](reply:menu)`), 
+	prompt: (bot,name) => bot.say('Hans\' work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -117,7 +117,79 @@ thoughts: {
 	//latest tweets
 	//his articles/writing
 	//hans' linkedin
+	prompt: (bot,name) => bot.say('Hans\' thoughts' + `%[Latest tweet](reply:tweet) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`), 
+			
+		receive: (bot, message) => {
+        var menu = message.text;
+        var lmenu = menu.toLowerCase();
+			
+			if ( lmenu.indexOf('article') >= 0){
+				var feed = require('feed-read'),  // require the feed-read module
+				urls = [
+				"https://goo.gl/iscgRo"
+			
+				]; // RSS Feeds can be comma delimited
 	
+	
+				// loop through our list of RSS feed urls
+				for (var j = 0; j < urls.length; j++) {
+
+				// fetch rss feed for the url:
+				feed(urls[j], function(err, articles) {
+
+				// loop through the list of articles returned
+				for (var i = 0; i < articles.length; i++) {
+		 
+				var title = articles[i].title;
+				var content = articles[i].content;
+				var link = articles[i].link;
+
+				return bot.say(`Hans\' latest articles on medium include:\n` +  title + "\n"+ link + "\n")
+				.then(() => 'thoughts');
+				} //  end inner for loop
+			}); // end call to feed (feed-read) method
+			} // end urls for loop
+//	
+				} else if ( lmenu.indexOf('linkedin') >= 0){
+				return bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`)
+				.then(() => 'thoughts');
+				} else if ( lmenu.indexOf('menu') >= 0){
+				return('menuTop');
+			} else if ( lmenu.indexOf('main') >= 0){
+				return('menuTop');
+			} else if ( lmenu.indexOf('tweet') >= 0){
+				var feed = require('feed-read'),  // require the feed-read module
+				urls = [
+				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
+			
+				]; // RSS Feeds can be comma delimited
+	
+	
+				// loop through our list of RSS feed urls
+				for (var j = 0; j < urls.length; j++) {
+
+				// fetch rss feed for the url:
+				feed(urls[j], function(err, articles) {
+
+				// loop through the list of articles returned
+				for (var i = 0; i < articles.length; i++) {
+		 
+				var content = articles[i].content;
+				var link = articles[i].link;
+
+				return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+				//`%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`
+			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking? Just click this link and I\'ll create a tweet for you.' + '%[Tweet Hans](https://twitter.com/intent/tweet?text=Chatbots%20are%20taking%20over.%20James%20-%20Virtual%20Assistant%20to%20%40HansZed%20and%20I%20are%20chatting...)')
+				.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
+				//.then(() => bot.say('Or you can Follow @HansZed by clicking the button/link' + `%[Follow Hans](https://twitter.com/intent/follow\?screen\_name\=hanszed`))
+				.then(() => bot.say('Or you can follow @HansZed via the link below' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
+				.then(() => 'thoughts');
+				} //  end inner for loop
+			}); // end call to feed (feed-read) method
+			} // end urls for loop
+	
+			}
+}		
 },
 
 infoTop:{
