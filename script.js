@@ -249,9 +249,9 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 			return('sendSMS');
 				
 
-			} else if ( lmenu.indexOf('menu') >= 0){
+			} else if ( linnermenu.indexOf('menu') >= 0){
 				return('menuTop');
-			} else if ( lmenu.indexOf('main') >= 0){
+			} else if ( linnermenu.indexOf('main') >= 0){
 				return('menuTop');
 			} else {
 				
