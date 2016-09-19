@@ -58,7 +58,8 @@ Reason: {
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
             .then(() => 'menuTop');
 			 } else { 
-			return('menuTop');
+			 return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
+			.then(() => 'Reason');
 			}
 	   
         }
