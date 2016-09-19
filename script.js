@@ -81,7 +81,8 @@ menuTop: {
 			} else if ( lmenu.indexOf('thoughts') >= 0){
 			return('thoughts');
 			} else {
-				return('menuTop');
+				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
+				.then(() => 'menuTop');
 			}
 		}			
 },
@@ -94,7 +95,7 @@ work: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			return bot.say(`Hans considers his primary skills to be: Team Leadership & Development\nStrategic Planning\nEnterprise Architecture\nDriving Innovation\nAgile Methodologies`)
+			return bot.say(`Hans considers his primary skills to be:\nTeam Leadership & Development\nStrategic Planning\nEnterprise Architecture\nDriving Innovation\nAgile Methodologies`)
 			
 			.then(() => 'work');
 			} else if ( lmenu.indexOf('experience') >= 0){
@@ -112,6 +113,9 @@ work: {
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
+			} else {
+				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
+				.then(() => 'work');
 			}
 		}
 },
