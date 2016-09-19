@@ -237,7 +237,7 @@ prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
 			var linnermenu = innermenu.toLowerCase();
 			if ( linnermenu.indexOf('email') >= 0){
 				
-				return bot.say('Hans\' email is hans.zetterstrom@gmail.com');
+				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
 				.then(() => 'infoTop');
 				
 			}
@@ -291,7 +291,7 @@ sendSMS: {
 				from: '312-313-4267',
 				body: message3.text
 				});
-			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.');
+			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.')
 			.then(() => 'infoTop');
 	}
 },
