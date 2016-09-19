@@ -95,7 +95,7 @@ work: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			return bot.say(`Hans considers his primary skills to be:\nTeam Leadership & Development\nStrategic Planning\nEnterprise Architecture\nDriving Innovation\nAgile Methodologies`)
+			return bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
 			
 			.then(() => 'work');
 			} else if ( lmenu.indexOf('experience') >= 0){
