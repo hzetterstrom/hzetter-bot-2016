@@ -117,7 +117,7 @@ thoughts: {
 	//latest tweets
 	//his articles/writing
 	//hans' linkedin
-	prompt: (bot,name) => bot.say('Hans\' thoughts' + `%[Latest tweet](reply:tweet) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`), 
+	prompt: (bot,name) => bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -208,7 +208,7 @@ infoTop:{
 			else if ( lmenu.indexOf('james') >= 0){
 				return bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework. I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
-			.then(() => 'nextMenu');
+			.then(() => 'info');
 			}
 		}
 },
