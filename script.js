@@ -114,7 +114,9 @@ work: {
 },
 
 thoughts: {
-	//return (menuTop);
+	//latest tweets
+	//his articles/writing
+	//hans' linkedin
 	
 },
 
