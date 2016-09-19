@@ -213,7 +213,7 @@ infoTop:{
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('contact') >= 0){
-				return bot.say(`%[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
+				return bot.say(`%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
 			.then(() => 'info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
