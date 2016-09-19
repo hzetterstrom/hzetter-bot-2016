@@ -144,7 +144,7 @@ thoughts: {
 				var content = articles[i].content;
 				var link = articles[i].link;
 
-				return bot.say(`Hans\' latest articles on medium include:\n` +  title + "\n"+ link + "\n")
+				bot.say(`Hans\' latest articles on medium include:\n` +  title + "\n"+ link + "\n")
 				//.then(() => 'thoughts');
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
