@@ -186,10 +186,9 @@ thoughts: {
 				} //  end inner for loop
 				return('thoughts');
 			}); // end call to feed (feed-read) method
+			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
 			return('thoughts');
 			} // end urls for loop
-			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
-	return('thoughts');
 			}
 			return('thoughts');
 }		
