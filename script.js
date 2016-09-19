@@ -150,7 +150,7 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			return('thoughts');
 			} // end urls for loop
-//	
+				return('thoughts');
 				} else if ( lmenu.indexOf('linkedin') >= 0){
 				return bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`)
 				.then(() => 'thoughts');
