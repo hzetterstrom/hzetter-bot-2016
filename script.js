@@ -206,7 +206,7 @@ thoughts: {
 },
 
 infoTop:{
-	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[About James](reply:James)`), 
+	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[About James](reply:James) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -220,6 +220,10 @@ infoTop:{
 			bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework. I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`)
 			return('infotop');
+			} else if ( lmenu.indexOf('menu') >= 0){
+				return('menuTop');
+			} else if ( lmenu.indexOf('main') >= 0){
+				return('menuTop');
 			} else {
 				
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
