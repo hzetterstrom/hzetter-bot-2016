@@ -109,7 +109,7 @@ work: {
 			} else if ( lmenu.indexOf('resume') >= 0){
 			return bot.say(`%[Hans\' resume](https://goo.gl/8mBhae)`)
 			.then(() => 'work');		
-		} else if ( lmenu.indexOf('menu') >= 0){
+			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
