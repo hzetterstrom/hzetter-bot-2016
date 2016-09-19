@@ -292,7 +292,11 @@ sendSMS: {
 	var twilio = require('twilio');
  
 				// Find your account sid and auth token in your Twilio account Console.
-				var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
+				//var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
+				var client = twilio('SK9bb10c5f10fd26aeba606647bcc9e3c0', 'BhhuXf6lZq4NqgL6UpAhm5sbrChVii8I');
+ 
+ 
+ 
  
 				// Send the text message.
 				client.sendMessage({
