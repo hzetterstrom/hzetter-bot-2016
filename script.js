@@ -58,9 +58,8 @@ Reason: {
 			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
             .then(() => 'menuTop');
 			 } else { 
-     
-	   return('menuTop');
-	   }
+			return('menuTop');
+			}
 	   
         }
             
@@ -80,6 +79,8 @@ menuTop: {
 			return('work');
 			} else if ( lmenu.indexOf('thoughts') >= 0){
 			return('thoughts');
+			} else {
+				return('menuTop');
 			}
 		}			
 },
@@ -92,7 +93,8 @@ work: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			return bot.say(`Hans considers his primary skills to be:\nAgile Methodologies\nStrategic Planning\nEnterprise Architecture\nLeading Teams\nTalent Development\n` ) 
+			return bot.say(`Hans considers his primary skills to be: Team Leadership & Development\nStrategic Planning\nEnterprise Architecture\nDriving Innovation\nAgile Methodologies`)
+			
 			.then(() => 'work');
 			} else if ( lmenu.indexOf('experience') >= 0){
 			return bot.say(`Hans\' latest experiences include:\n`)	
@@ -270,7 +272,7 @@ sendSMS: {
 				from: '312-313-4267',
 				body: message3.text
 				});
-			return bot.say('We sent a text to Hans. He usually replies pretty quickly.');
+			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.');
 	}
 },
 waitHere: {
