@@ -215,7 +215,9 @@ thoughts: {
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'thoughts');
 			}
+			setTimeout(function () {
 			return('thoughts');
+			}, 8000); 
 	}		
 },
 
