@@ -205,10 +205,9 @@ thoughts: {
 			//console.log('timeout completed'); 
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
 			}, 5000); 
-			setTimeout(function () {
+//setTimeout(function () {
 			return('thoughts');
-			}, 8000); 
-			
+	//		}, 8000); 
 			} // end urls for loop
 			} else {
 				
