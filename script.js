@@ -2,8 +2,7 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
-var wait = require('wait');
-
+//var wait = require('wait');
 function wait() {
    return new Promise(
        function (resolve, reject) {
@@ -131,6 +130,8 @@ thoughts: {
 	//latest tweets
 	//his articles/writing
 	//hans' linkedin
+	
+	
 	prompt: (bot,name) => bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
@@ -200,8 +201,11 @@ thoughts: {
 				} //  end inner for loop
 				//return('thoughts');
 			}); // end call to feed (feed-read) method
-			wait();
-			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
+			setTimeout(function () {
+			//console.log('timeout completed'); 
+			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+			}, 5000); 
+			//bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`)
 			return('thoughts');
 			} // end urls for loop
 			} else {
