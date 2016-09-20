@@ -4,6 +4,14 @@ const Script = require('smooch-bot').Script;
 var reason;
 var wait = require('wait');
 
+function wait() {
+   return new Promise(
+       function (resolve, reject) {
+           setTimeout(function() {
+   resolve('done');}, 5000);  
+	}
+       )};
+
 module.exports = new Script({
     processing: {
         prompt: (bot) => bot.say('Beep boop...'),
@@ -13,11 +21,8 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
 		return bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
-		.then(() => setTimeout(function () {console.log("waiting")}, 5000))
-		//then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')
 		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
-		//.then(function(){console.log('done'); bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')})
-                .then(() => 'askName');
+        .then(() => 'askName');
 
 		}
     },
