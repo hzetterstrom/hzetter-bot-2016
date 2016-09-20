@@ -202,10 +202,10 @@ thoughts: {
 			console.log("follow hans");
 			}, 5000); 
 			
-			setTimeout(function () {
+			setTimeout(function2 () {
 			console.log("return menu");
 			return('thoughts');
-			}, 2000); 
+			}, 7000); 
 			} // end urls for loop
 			} else {
 				
