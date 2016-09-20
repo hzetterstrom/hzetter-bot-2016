@@ -195,20 +195,17 @@ thoughts: {
 
 				//return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 			 bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-			//	.then(() => bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`))
-			//	.then(() => bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`))
-				//.then(() => 'thoughts');
 				} //  end inner for loop
-				//return('thoughts');
 			}); // end call to feed (feed-read) method
 			setTimeout(function () {
-			//console.log('timeout completed'); 
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			return('thoughts');
+			console.log("follow hans");
 			}, 5000); 
-//setTimeout(function () {
-			//return('thoughts');
-	//		}, 8000); 
+			
+			setTimeout(function () {
+			console.log("return menu");
+			return('thoughts');
+			}, 2000); 
 			} // end urls for loop
 			} else {
 				
