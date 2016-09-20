@@ -13,7 +13,7 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
 		return bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
-		.then(() => setTimeout(function () {}, 5000))
+		.then(() => setTimeout(function () {console.log("waiting")}, 5000))
 		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
                 .then(() => 'askName');
 
