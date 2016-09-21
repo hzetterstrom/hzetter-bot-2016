@@ -2,6 +2,14 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
+//var wait = require('wait');
+function wait() {
+   return new Promise(
+       function (resolve, reject) {
+           setTimeout(function() {
+   resolve('done');}, 5000);  
+	}
+       )};
 
 module.exports = new Script({
     processing: {
@@ -18,13 +26,13 @@ module.exports = new Script({
 			//console.log("follow hans");
 			
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')
-			askname();
+			
 			}, 5000);
 			});
 			return promise;			
-			return thoughts;
 			
 		}
+		askname();
     },
 
     askName: {
