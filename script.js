@@ -201,17 +201,11 @@ thoughts: {
 			setTimeout(function () {
 				console.log("follow hans");
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			}, 5000);
-			});
-			return promise;
-			var promise = new Promise(function(resolve, reject) {
-			setTimeout(function () {
-				console.log("return thoughts");
 			bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`);
-			return thoughts;
 			}, 5000);
 			});
-			return promise;
+			return promise;			
+			return thoughts;
 			
 			} // end urls for loop
 			} else {
