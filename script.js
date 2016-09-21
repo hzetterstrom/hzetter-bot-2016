@@ -202,7 +202,6 @@ thoughts: {
 				console.log("follow hans");
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
 			}, 5000);
-			return thoughts;
 			});
 			return promise;
 			//var promise2 = new Promise(function(resolve, reject) {
