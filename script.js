@@ -2,14 +2,6 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
-//var wait = require('wait');
-function wait() {
-   return new Promise(
-       function (resolve, reject) {
-           setTimeout(function() {
-   resolve('done');}, 5000);  
-	}
-       )};
 
 module.exports = new Script({
     processing: {
