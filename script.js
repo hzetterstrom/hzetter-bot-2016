@@ -25,12 +25,12 @@ module.exports = new Script({
 			setTimeout(function () {
 			//console.log("follow hans");
 			
-			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')
-			//askname();
+			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
+			return('askname');
 			}, 5000);
 			});
 			return promise;			
-			return askname;
+			//return askname;
 		}
     },
 
