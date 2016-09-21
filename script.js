@@ -11,10 +11,19 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-		return bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
-		.then(() => bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.'))
-        .then(() => 'askName');
-
+			
+			bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			//console.log("follow hans");
+			
+			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')
+			askname();
+			}, 5000);
+			});
+			return promise;			
+			return thoughts;
+			
 		}
     },
 
@@ -79,7 +88,9 @@ menuTop: {
 			return('work');
 			} else if ( lmenu.indexOf('thoughts') >= 0){
 			return('thoughts');
-			} else {
+			}else if ( lmenu.indexOf('start') >= 0){
+			return('start');
+			}  else {
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'menuTop');
 			}
