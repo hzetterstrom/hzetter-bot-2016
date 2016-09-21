@@ -23,14 +23,17 @@ module.exports = new Script({
 			bot.say('![](https://secure.gravatar.com/avatar/a7d49a9a2ab6e952e760ebddacd9be50)')
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			//console.log("follow hans");
+			
 			
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
+			console.log("Post James intro");
 			//return('askname');
 			}, 5000);
 			});
-			return promise;			
+			return promise;		
+console.log('about to askname');			
 			return askName;
+			console.log('after askname');
 		}
     },
 
