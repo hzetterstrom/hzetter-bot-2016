@@ -197,24 +197,23 @@ thoughts: {
 			 
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
-			setTimeout(function () {
+			//setTimeout(function () {
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
 			console.log("follow hans");
-			}, 5000); 
+			//}, 5000); 
 			
 			setTimeout(function () {
 			console.log("return menu");
-			//return('thoughts');
-			}, 7000); 
+			return('thoughts');
+			}, 5000); 
 			} // end urls for loop
 			} else {
 				
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'thoughts');
 			}
-			setTimeout(function () {
+		
 			return('thoughts');
-			}, 8000); 
 	}		
 },
 
