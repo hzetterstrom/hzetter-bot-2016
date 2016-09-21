@@ -193,8 +193,8 @@ thoughts: {
 				var content = articles[i].content;
 				var link = articles[i].link;
 
-				//return bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
 			 bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+			 
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
 			setTimeout(function () {
@@ -202,9 +202,9 @@ thoughts: {
 			console.log("follow hans");
 			}, 5000); 
 			
-			setTimeout(function2 () {
+			setTimeout(function () {
 			console.log("return menu");
-			return('thoughts');
+			//return('thoughts');
 			}, 7000); 
 			} // end urls for loop
 			} else {
@@ -212,9 +212,9 @@ thoughts: {
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'thoughts');
 			}
-		//	setTimeout(function () {
+			setTimeout(function () {
 			return('thoughts');
-		//	}, 8000); 
+			}, 8000); 
 	}		
 },
 
