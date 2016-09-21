@@ -30,10 +30,11 @@ module.exports = new Script({
 			//return('askname');
 			}, 5000);
 			});
-			return promise;		
-console.log('about to askname');			
+			console.log('about to askname');	
 			return askName;
 			console.log('after askname');
+			return promise;		
+
 		}
     },
 
