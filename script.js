@@ -30,7 +30,7 @@ module.exports = new Script({
 			}, 5000);
 			});
 			return promise;			
-			//return askname;
+			return askname;
 		}
     },
 
