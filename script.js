@@ -27,6 +27,7 @@ module.exports = new Script({
 				console.log("follow hans");
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
 			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
+			resolve();
 			}, 5000);
 			});
 			return promise.then(function(){
