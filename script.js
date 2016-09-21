@@ -26,13 +26,12 @@ module.exports = new Script({
 			//console.log("follow hans");
 			
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.')
-			
+			//askname();
 			}, 5000);
 			});
 			return promise;			
-			
+			//return askname;
 		}
-		askname();
     },
 
     askName: {
