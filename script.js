@@ -31,7 +31,7 @@ module.exports = new Script({
 			}, 5000);
 			});
 			console.log('about to askname');	
-			return askName;
+			askName();
 			console.log('after askname');
 			return promise;		
 
