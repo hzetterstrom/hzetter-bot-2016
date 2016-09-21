@@ -207,7 +207,8 @@ thoughts: {
 			var promise2 = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 			console.log("return menu");
-			thoughts();
+			bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`);
+			return('thoughts');
 			}, 5000); 
 			});
 			return promise2;
