@@ -26,10 +26,12 @@ module.exports = new Script({
 			setTimeout(function () {
 				console.log("follow hans");
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
-			bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
+			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			}, 5000);
 			});
-			return promise.then(() => 'askName');	
+			return promise.then(function(){
+				console.log('done with promise');
+				return'askName';});	
 			
 		}
     },
