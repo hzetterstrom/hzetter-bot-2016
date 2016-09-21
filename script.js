@@ -29,9 +29,8 @@ module.exports = new Script({
 			bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			}, 5000);
 			});
-			return promise;			
-			askName();	
-
+			return promise.then(() => 'askName');	
+			
 		}
     },
 
@@ -215,8 +214,8 @@ thoughts: {
 			bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`);
 			}, 5000);
 			});
-			return promise;			
-			return thoughts;
+			return promise.then(() => 'thoughts');			
+			//return thoughts;
 			
 			} // end urls for loop
 			} else {
