@@ -26,11 +26,11 @@ module.exports = new Script({
 			//console.log("follow hans");
 			
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
-			return('askname');
+			//return('askname');
 			}, 5000);
 			});
 			return promise;			
-			//return askname;
+			return askName;
 		}
     },
 
