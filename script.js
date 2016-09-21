@@ -197,15 +197,23 @@ thoughts: {
 			 
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
-			//setTimeout(function () {
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			console.log("follow hans");
-			//}, 5000); 
-			
+			}, 5000);
+			});
+			return promise;
+			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 			console.log("return menu");
 			return('thoughts');
 			}, 5000); 
+			});
+		//	setTimeout(function () {
+		//	bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+		//	console.log("follow hans");
+		//	}, 5000); 
+			
 			} // end urls for loop
 			} else {
 				
