@@ -212,13 +212,13 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-				console.log("follow hans");
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`);
+			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
+			resolve();
 			}, 5000);
 			});
-			return promise.then(() => 'thoughts');			
-			//return thoughts;
+			return promise.then(function(){
+				return'thoughts';});	
 			
 			} // end urls for loop
 			} else {
