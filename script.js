@@ -91,6 +91,16 @@ quickIntro: {
 },
 
 whereyoufrom: {
+	
+	//bot.getProp('name');
+	prompt: (bot,name) => bot.say(`Where are you from ${name}`),	
+	receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+		bot.say('I love ${reason}! So nice this time of year.')
+		.then(() => 'menuTop');
+	}
+	
 
 //return('menuTop');
 	
