@@ -2,14 +2,7 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
-//var wait = require('wait');
-function wait() {
-   return new Promise(
-       function (resolve, reject) {
-           setTimeout(function() {
-   resolve('done');}, 5000);  
-	}
-       )};
+
 
 module.exports = new Script({
     processing: {
@@ -25,8 +18,7 @@ module.exports = new Script({
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 				console.log("i am james");
-			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
-			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
+			bot.say('Hi! I\'m James. I\'m Hans\' virtual assistant. Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
 			resolve();
 			}, 5000);
 			});
@@ -60,15 +52,20 @@ Reason: {
              } else {
 			 bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
 			 
-			var promise = new Promise(function(resolve, reject) {
+			
+			 
+			 var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
+				console.log('intro stuff');
+			//bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
+			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
 			}, 5000);
 			});
 			return promise.then(function(){
-				console.log('done with reason promise');
+				console.log('outside reason promise');
 				return'quickIntro';});	
+			 
 			 
 		   } 
 	
