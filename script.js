@@ -58,7 +58,7 @@ Reason: {
 			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual acquaintance.`))
 			.then(() => 'menuTop');
              } else {
-			 return bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
+			 bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
 			 
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
