@@ -78,6 +78,7 @@ quickIntro: {
 	receive: (bot, message) => {
         var ureason = message.text;
         reason = ureason.toLowerCase();
+	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
 			bot.getProp('name')
@@ -92,8 +93,7 @@ quickIntro: {
 			return('menuTop');
 			}
 			 
-			 
-		   } 
+	}	 
 	
 },
 
