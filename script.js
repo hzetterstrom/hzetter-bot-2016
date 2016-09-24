@@ -40,7 +40,7 @@ module.exports = new Script({
     },
 	
 Reason: {
-	prompt: (bot,name) => bot.say(`Do you know Hans? (yes/no)`),	
+	prompt: (bot,name) => bot.say(`Have you and Hans met before? (yes/no)`),	
 	receive: (bot, message) => {
         var ureason = message.text;
         reason = ureason.toLowerCase();
@@ -81,14 +81,7 @@ quickIntro: {
 	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			bot.getProp('name')
-				prompt: (bot,name) => bot.say(`Where are you from ${name}?`);
-					receive: (bot, message) => {
-					var ureason = message.text;
-					reason = ureason.toLowerCase();
-					bot.say('I love ${reason}! So nice this time of year.')
-					.then(() => 'quickIntro');
-					}
+			return('whereyoufrom');
 			} else {
 			return('menuTop');
 			}
@@ -96,6 +89,14 @@ quickIntro: {
 	}	 
 	
 },
+
+whereyoufrom: {
+
+//return('menuTop');
+	
+},
+
+//bot.say('I love ${reason}! So nice this time of year.')
 
 	
 menuTop: {
