@@ -24,7 +24,7 @@ module.exports = new Script({
 			
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-				console.log("follow hans");
+				console.log("i am james");
 			bot.say('Hi! I\'m James, Hans\' virtual assistant! Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
 			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
