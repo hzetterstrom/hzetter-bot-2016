@@ -64,8 +64,7 @@ Reason: {
 			});
 			return promise.then(function(){
 			console.log('outside reason promise');
-			//bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.')
-			return'quickIntro';
+			return'quickIntro(name)';
 			});	
 			 
 			 }
@@ -81,7 +80,7 @@ quickIntro: {
 	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			return('whereyoufrom');
+			return('whereyoufrom(name)');
 			} else {
 			return('menuTop');
 			}
