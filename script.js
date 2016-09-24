@@ -68,7 +68,7 @@ Reason: {
 			return'quickIntro';
 			});	
 			 
-			 
+			 }
 		   } 
 	
 },
@@ -97,65 +97,6 @@ quickIntro: {
 	
 },
 
-quickIntro: {
-	
-	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
-	receive: (bot, message) => {
-        var ureason = message.text;
-        reason = ureason.toLowerCase();
-		
-		if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-		return bot.getProp('name')
-		prompt: (bot,name) => bot.say(`Where are you from ${name}?`);
-		
-		receive: (bot, message) => {
-        var ureason = message.text;
-        reason = ureason.toLowerCase();
-		return bot.say('I love ${reason}! So nice this time of year.')
-		.then(() => 'menuTop');
-		}
-		}
-	}	
-}	
-	
-},
-
-//Reason: {
-	    
-//		prompt: (bot,name) => bot.say(`Tell me a little more about you? ` + `%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just visiting](reply:visiting)`), 
-			
-//		receive: (bot, message) => {
- //       var ureason = message.text;
- //       reason = ureason.toLowerCase();
-				
-//            if( reason.indexOf('friend') >= 0){
-//             reason = 'friend'
-//			 return bot.getProp('name')
-//			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual friend.`))
-//			.then(() => 'menuTop');
-//            } else if( reason.indexOf('manager') >= 0){
-//             reason = 'manager'
-//			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-//			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
-//			.then(() => 'menuTop');      
-//		   } else if( reason.indexOf('recruiter') >= 0){
- //            reason = 'recruiter'
-//			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-//			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
-//			.then(() => 'menuTop');
-//			} else if( reason.indexOf('curious') >= 0){
-//             reason = 'visiting'
-//			return bot.say('![](https://secure.gravatar.com/avatar/6df718bd56665a8d924fb58f3c23278b)')
-//			.then(() => bot.say('OK. Let me introduce Hans. He is currently COO at American Association for Physician Leadership, previously he was CIO there too. Hans cut his teeth as a system engineer in online services companies, as well as financial and media measurement organizations before he headed into healthcare. He\'s certified in Agile methodologies and knows how to transform organizations to efficiently use it. He understands how critical it is to not only implement the process of Agile but transform the culture too.'))
- //           .then(() => 'menuTop');
-//			 } else { 
-//			 return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
-//			.then(() => 'Reason');
-//			}
-//	   
- //       }
-//            
-//	},
 	
 menuTop: {
 	
