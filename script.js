@@ -64,7 +64,7 @@ Reason: {
 			});
 			return promise.then(function(){
 			console.log('outside reason promise');
-			return'quickIntro(name)';
+			return'quickIntro(${name})';
 			});	
 			 
 			 }
@@ -80,7 +80,7 @@ quickIntro: {
 	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			return('whereyoufrom(name)');
+			return('whereyoufrom(${name})');
 			} else {
 			return('menuTop');
 			}
