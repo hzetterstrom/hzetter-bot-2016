@@ -31,7 +31,7 @@ module.exports = new Script({
 			}, 5000);
 			});
 			return promise.then(function(){
-				console.log('done with promise');
+				console.log('done with start promise');
 				return'askName';});	
 			
 		}
@@ -62,19 +62,19 @@ Reason: {
 			 
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('OK. Well since you\'re acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
+			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
 			resolve();
 			}, 5000);
 			});
 			return promise.then(function(){
-				console.log('done with promise');
-				return'intro';});	
+				console.log('done with reason promise');
+				return'Intro';});	
 			 
 		   } 
 	
 },
 
-intro: {
+Intro: {
 	
 	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
 	receive: (bot, message) => {
