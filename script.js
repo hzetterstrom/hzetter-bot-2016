@@ -57,14 +57,14 @@ Reason: {
 			 var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 				console.log('intro stuff');
-			//bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
+			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
 			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
 			}, 5000);
 			});
 			return promise.then(function(){
 				console.log('outside reason promise');
-				return'quickIntro';});	
+				return'menuTop';});	
 			 
 			 
 		   } 
