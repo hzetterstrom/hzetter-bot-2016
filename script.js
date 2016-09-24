@@ -72,6 +72,30 @@ Reason: {
 },
 
 quickIntro: {
+	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
+	receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+				
+            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
+			bot.getProp('name')
+				prompt: (bot,name) => bot.say(`Where are you from ${name}?`);
+					receive: (bot, message) => {
+					var ureason = message.text;
+					reason = ureason.toLowerCase();
+					bot.say('I love ${reason}! So nice this time of year.')
+					.then(() => 'quickIntro');
+					}
+			} else {
+			return('menuTop');
+			}
+			 
+			 
+		   } 
+	
+},
+
+quickIntro: {
 	
 	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
 	receive: (bot, message) => {
