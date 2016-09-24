@@ -48,6 +48,56 @@ module.exports = new Script({
     },
 	
 Reason: {
+	prompt: (bot,name) => bot.say(`Do you know Hans? (yes/no)`),	
+	receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+				
+            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
+			 return bot.getProp('name')
+			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual acquaintance.`))
+			.then(() => 'menuTop');
+             } else {
+			 return bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
+			 
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('OK. Well since you\'re acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.');
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				console.log('done with promise');
+				return'intro';});	
+			 
+		   } 
+	
+},
+
+intro: {
+	
+	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
+	receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+		
+		if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
+		return bot.getProp('name')
+		prompt: (bot,name) => bot.say(`Where are you from ${name}?`);
+		
+		receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+		return bot.say('I love ${reason}! So nice this time of year.')
+		.then(() => 'menuTop');
+		}
+		}
+	}	
+}	
+	
+},
+
+Reason: {
 	    
 		prompt: (bot,name) => bot.say(`Tell me a little more about you? ` + `%[I\'m a recruiter](reply:recruiter) %[I\'m a hiring manager](reply:manager) %[I\'m a friend](reply:friend) %[I\'m just visiting](reply:visiting)`), 
 			
