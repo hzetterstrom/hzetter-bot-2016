@@ -68,13 +68,13 @@ Reason: {
 			});
 			return promise.then(function(){
 				console.log('done with reason promise');
-				return'Intro';});	
+				return'quickIntro';});	
 			 
 		   } 
 	
 },
 
-Intro: {
+quickIntro: {
 	
 	prompt: (bot,name) => bot.say(`I\'d like to be able to introduce the two of you, can I ask you a couple of questions? (yes/no)`),	
 	receive: (bot, message) => {
