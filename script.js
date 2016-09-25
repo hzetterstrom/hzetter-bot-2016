@@ -399,7 +399,7 @@ info: {
 
 //%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)
 //prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
-prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:cinfo) %[Main Menu](reply:menu)`),
+prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:contacts) %[Main Menu](reply:menu)`),
 
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
@@ -410,7 +410,7 @@ prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d l
 				.then(() => 'infoTop');
 				
 			} 
-			else if ( linnermenu.indexOf('cinfo') >= 0){
+			else if ( linnermenu.indexOf('contacts') >= 0){
 				return bot.say('Download Hans\' contact info to your contact list here http://goo.gl/V2CrZR')
 				.then(() => 'infoTop');
 			}
