@@ -249,8 +249,8 @@ thoughts: {
 				feed(urls[j], function(err, articles) {
 
 				// loop through the list of articles returned
-				//for (var i = 0; i < articles.length; i++) {
-				for (var i = 0; i < 2; i++) {
+				for (var i = 0; i < articles.length; i++) {
+				//for (var i = 0; i < 2; i++) {
 		 
 				var title = articles[i].title;
 				var content = articles[i].content;
@@ -305,7 +305,6 @@ thoughts: {
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
 			}, 5000);
 			});
@@ -331,8 +330,6 @@ infoTop:{
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('contact') >= 0){
-			//	return bot.say(`%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
-			//.then(() => 'info');
 			return('info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
@@ -397,8 +394,6 @@ infoTop:{
 
 info: {
 
-//%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)
-//prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
 prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:contacts) %[Main Menu](reply:menu)`),
 
  			receive: (bot, message2) => {
@@ -456,16 +451,9 @@ sendSMS: {
 	prompt: (bot) => bot.say('Ok, we do can that. Type the message to me and I\'ll relay it to Hans. Include your name and phone number so he can get back to you.'),
 	receive: (bot,message3) => {
 		
-	
-	//var twilio = require('twilio');
- 
-				// Find your account sid and auth token in your Twilio account Console.
+				
 				var client = require('twilio')();
-				//var client = twilio('SKde37afc7a1af8c417f2ebad2e258d6d6', 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc');
- 
- 
- 
- 
+				 
 				// Send the text message.
 				client.sendMessage({
 				to: '813-408-4511',
@@ -478,17 +466,6 @@ sendSMS: {
 	}
 },
 
-
-// You will need your Account Sid and a API Key Sid and Secret
-// to generate an Access Token for your SDK endpoint to connect to Twilio.
-//var accountSid = 'AC3ab54f75d727117dded31bb4cc42fd46';
-//var apiKeySid = 'SKde37afc7a1af8c417f2ebad2e258d6d6';
-//var apiKeySecret = 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc';
-
-//var token = new twilio.AccessToken(apiKeySid, accountSid, apiKeySecret);
-//token.addEndpointGrant(ENDPOINT_NAME);
-//token.enableNTS();
-//console.log(token.toJwt());
 
 
 waitHere: {
@@ -514,32 +491,6 @@ waitHere: {
     }
 });
 
-//unused code here
-//else  if ( lmenu.indexOf('analogy') >= 0){ 
-			//	var RNDNUM = Math.floor(Math.random() * 11);
-			//	if (RNDNUM = 1) {
-			//		return bot.say('Random Analogy 1 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} else if (RNDNUM = 2) {
-			//		return bot.say('Random Analogy 2 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} else if (RNDNUM = 3) {
-			//		return bot.say('Random Analogy 3 ' + RNDNUM)
-			//		 .then(() => 'menuNew');
-			//	} 
-			//} 
-			 //return bot.setProp('reason', reason)
-	//  return bot.getProp('name')
-    //	.then((name) => bot.say(`Excellent ${name}, I\'ll be sure to remember that on future visits`))
-       //   .then(() => 'menuNew');
-	   				//prompt: (bot) => bot.say(`OK! ${name}.\n Let\'s get down to work. ` +
-				//`%[Import Hans\' contact info](http://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b.vcf) %[Hans\' Gravatar Profile](https://en.gravatar.com/6df718bd56665a8d924fb58f3c23278b)`))
-				
-				 // `How can I assist? %[See Hans Linkedin Profile](reply:LinkedIn) %[Hans Resume](reply:Resume)`))
-		//return bot.getProp('name')
-		
-		// .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-          //              'teach me how to do anything else!'))
 		
 		
 	
