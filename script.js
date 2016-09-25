@@ -60,7 +60,7 @@ Reason: {
 			setTimeout(function () {
 				console.log("mutual acquaintance");
 			var uname = bot.getProp('name')
-			bot.say('Excellent ' + uname + ', It\'s nice to meet a mutual acquaintance.');
+			bot.say('Excellent, It\'s nice to meet a mutual acquaintance.');
 			resolve();
 			}, 5000);
 			});
