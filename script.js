@@ -65,7 +65,7 @@ Reason: {
 			});
 			return promise.then(function(){
 			console.log('outside reason promise');
-			return'quickIntro(uname)';
+			return'quickIntro';
 			});	
 			 
 			 }
@@ -93,7 +93,8 @@ quickIntro: {
 whereyoufrom: {
 	
 	//bot.getProp('name');
-	prompt: (bot,name) => bot.say(`Where are you from ${name}`),	
+	//var uname = bot.getProp('name')
+	prompt: (bot,name) => bot.say(`Where are you from?`),	
 	receive: (bot, message) => {
         var ureason = message.text;
         reason = ureason.toLowerCase();
