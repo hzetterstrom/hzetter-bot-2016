@@ -94,7 +94,7 @@ quickIntro: {
         reason = ureason.toLowerCase();
 	
 				
-            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
+            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are' ||'sure') >= 0){
 			return('whereyoufrom');
 			} else {
 			return('menuTop');
@@ -385,7 +385,7 @@ infoTop:{
 
 info: {
 
-prompt: (bot) => bot.say( '%[Hans\' contact info](http://goo.gl/V2CrZR)'),
+prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
 
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
