@@ -65,7 +65,7 @@ Reason: {
 			 var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 				console.log('intro stuff');
-			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations & technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.')
+			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations and technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.')
 			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
 			}, 5000);
@@ -142,7 +142,7 @@ whatyoudo: {
 	
 menuTop: {
 	
-		prompt: (bot,name) => bot.say('What would you like to know about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
+		prompt: (bot,name) => bot.say('What would you like to know about Hans?' + `%[His Experience](reply:experience) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -150,8 +150,8 @@ menuTop: {
 			
 			if ( lmenu.indexOf('info') >= 0){
 			return('infoTop');
-			} else if ( lmenu.indexOf('work') >= 0){
-			return('work');
+			} else if ( lmenu.indexOf('experience') >= 0){
+			return('experience');
 			} else if ( lmenu.indexOf('thoughts') >= 0){
 			return('thoughts');
 			}else if ( lmenu.indexOf('start') >= 0){
@@ -163,8 +163,8 @@ menuTop: {
 		}			
 },
 
-work: {
-	prompt: (bot,name) => bot.say('Hans\' work' + `%[Skills](reply:skills) %[Experience](reply:experience) %[Resume](reply:resume) %[Main Menu](reply:menu)`), 
+experience: {
+	prompt: (bot,name) => bot.say('Hans has worked on some cool things. Check out what he\'s worked on most recently.' + `%[Skills](reply:skills) %[Latest Projects](reply:projects) %[Linkedin](reply:linkedin) %[Resume](reply:resume) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -172,25 +172,29 @@ work: {
 			
 			if ( lmenu.indexOf('skills') >= 0){
 			return  bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
-			.then(() => 'work');
-			} else if ( lmenu.indexOf('experience') >= 0){
+			.then(() => 'experience');
+			} else if ( lmenu.indexOf('projects') >= 0){
 			return bot.say(`Hans\' latest experiences include:\n`)	
 			.then(() => bot.say(`•	Created Kanban room to visually represent organizational decisions and KPI performance. \n`))
 			.then(() => bot.say(`•	Implemented Agile SDLC methodologies  and initiated a team culture devoted to the Agile Manifesto.\n`))
 			//.then(() => bot.say(`•	Reorganized company structure to create Product Managers using business model canvases, product roadmaps, qualitative research methods, and KPI management that resulted in more autonomy and a customer-centered focus.\n`))
-			.then(() => 'work');
+			.then(() => 'experience');
 				
 				
 			} else if ( lmenu.indexOf('resume') >= 0){
 			return bot.say(`%[Hans\' resume](https://goo.gl/x5fqqo)`)
-			.then(() => 'work');		
-			} else if ( lmenu.indexOf('menu') >= 0){
+			.then(() => 'experience');		
+			} else if ( lmenu.indexOf('linkedin') >= 0){
+				return bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`)
+				.then(() => 'experience');
+				}
+			else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
 			} else {
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
-				.then(() => 'work');
+				.then(() => 'experience');
 			}
 		}
 },
@@ -201,7 +205,7 @@ thoughts: {
 	//hans' linkedin
 	
 	
-	prompt: (bot,name) => bot.say('Hans\' thoughts' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Linkedin](reply:linkedin) %[Main Menu](reply:menu)`), 
+	prompt: (bot,name) => bot.say('See what Hans has been talking about' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -246,10 +250,7 @@ thoughts: {
 			
 			} // end urls for loop
 				return('thoughts');
-				} else if ( lmenu.indexOf('linkedin') >= 0){
-				return bot.say('Connect with Hans on' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`)
-				.then(() => 'thoughts');
-				} else if ( lmenu.indexOf('menu') >= 0){
+				}  else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
