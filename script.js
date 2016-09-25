@@ -324,7 +324,7 @@ thoughts: {
 },
 
 infoTop:{
-	prompt: (bot,name) => bot.say(`%[Contact](reply:contact) %[About James](reply:James) %[Main Menu](reply:menu)`), 
+	prompt: (bot,name) => bot.say('Get Hans\' contact information or learn more about this chatbot.' + `%[Contact](reply:contact) %[About James](reply:James) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
