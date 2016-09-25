@@ -453,7 +453,7 @@ nextMenu:{
 
 
 sendSMS: {
-	prompt: (bot) => bot.say('Ok, we do can that. Whatever you send in your next message to me, I\'ll relay straight to Hans. Be sure to include a call/text back number and your name.'),
+	prompt: (bot) => bot.say('Ok, we do can that. Whatever you send in your next message to me, I\'ll relay it to Hans. Include your name and phone number so he can get back to you.'),
 	receive: (bot,message3) => {
 		
 	
@@ -472,6 +472,7 @@ sendSMS: {
 				from: '312-313-4267',
 				body: message3.text
 				});
+			console.log('Sent text with ' + message3)
 			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.')
 			.then(() => 'infoTop');
 	}
