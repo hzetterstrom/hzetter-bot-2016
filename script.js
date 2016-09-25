@@ -457,11 +457,11 @@ sendSMS: {
 	receive: (bot,message3) => {
 		
 	
-	var twilio = require('twilio');
+	//var twilio = require('twilio');
  
 				// Find your account sid and auth token in your Twilio account Console.
-				
-				var client = twilio('SKde37afc7a1af8c417f2ebad2e258d6d6', 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc');
+				var client = require('twilio')();
+				//var client = twilio('SKde37afc7a1af8c417f2ebad2e258d6d6', 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc');
  
  
  
