@@ -261,14 +261,15 @@ thoughts: {
 	
 	
 				// loop through our list of RSS feed urls
-				//for (var j = 0; j < urls.length; j++) {
-				for (var j = 0; j < 3; j++) {
+				for (var j = 0; j < urls.length; j++) {
+				
+					
 				// fetch rss feed for the url:
 				feed(urls[j], function(err, articles) {
 
 				// loop through the list of articles returned
-				for (var i = 0; i < articles.length; i++) {
-		 
+				//for (var i = 0; i < articles.length; i++) {
+				for (var i = 0; i < 3; i++) {
 				var content = articles[i].content;
 				var link = articles[i].link;
 
