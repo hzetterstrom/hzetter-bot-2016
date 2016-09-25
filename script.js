@@ -302,26 +302,39 @@ infoTop:{
 			resolve();
 			}, 5000);
 			});
+			
 			return promise.then(function(){
-				var promise = new Promise(function(resolve, reject) {
+			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 			bot.say('I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.')
 			resolve();
 			}, 5000);
 			});
-			return promise.then(function(){
-				return'thoughts';
-				
-				
-			});	
-				
-				
-			});	
 			
-				
-				
-		//	 I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
+			return promise.then(function(){
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and my code is in github.')
+			resolve();
+			}, 5000);
+			});
+			
+			return promise.then(function(){
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
 			bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`)
+			resolve();
+			}, 5000);
+			});
+			
+			
+			});	
+			});	
+			});	
+				
+				
+		//	 ') my
+			
 			return('infoTop');
 			
 			
