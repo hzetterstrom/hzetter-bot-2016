@@ -327,7 +327,15 @@ infoTop:{
 			}, 5000);
 			});
 			return promise.then(function(){
-				return'thoughts';});
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			return('infoTop');
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+			});
+			});
 			
 			});	
 			});	
@@ -336,7 +344,7 @@ infoTop:{
 				
 		//	 ') my
 			
-			return('infoTop');
+			
 			
 			
 			
