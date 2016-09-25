@@ -44,10 +44,11 @@ Reason: {
 	receive: (bot, message) => {
         var ureason = message.text;
         reason = ureason.toLowerCase();
+		
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			 return bot.getProp('name')
-			.then((name) => bot.say(`Excellent ${name}, It\'s nice to meet a mutual acquaintance.`))
+			 var uname = bot.getProp('name')
+			.then((uname) => bot.say(`Excellent ${uname}, It\'s nice to meet a mutual acquaintance.`))
 			.then(() => 'menuTop');
              } else {
 			 bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
@@ -64,7 +65,7 @@ Reason: {
 			});
 			return promise.then(function(){
 			console.log('outside reason promise');
-			return'quickIntro(${name})';
+			return'quickIntro(uname)';
 			});	
 			 
 			 }
@@ -80,7 +81,7 @@ quickIntro: {
 	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			return('whereyoufrom(${name})');
+			return('whereyoufrom()');
 			} else {
 			return('menuTop');
 			}
