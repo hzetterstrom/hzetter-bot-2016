@@ -461,7 +461,7 @@ sendSMS: {
  
 				// Find your account sid and auth token in your Twilio account Console.
 				
-				var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
+				var client = twilio('SKde37afc7a1af8c417f2ebad2e258d6d6', 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc');
  
  
  
@@ -477,6 +477,20 @@ sendSMS: {
 			.then(() => 'infoTop');
 	}
 },
+
+
+// You will need your Account Sid and a API Key Sid and Secret
+// to generate an Access Token for your SDK endpoint to connect to Twilio.
+//var accountSid = 'AC3ab54f75d727117dded31bb4cc42fd46';
+//var apiKeySid = 'SKde37afc7a1af8c417f2ebad2e258d6d6';
+//var apiKeySecret = 'U6yJvQk7hqiVkDo8MXNPon2nagwAR4kc';
+
+//var token = new twilio.AccessToken(apiKeySid, accountSid, apiKeySecret);
+//token.addEndpointGrant(ENDPOINT_NAME);
+//token.enableNTS();
+//console.log(token.toJwt());
+
+
 waitHere: {
 	
 	receive: (bot, message) => {
