@@ -86,7 +86,7 @@ Reason: {
 			 var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 				console.log('intro stuff');
-			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations and technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.')
+			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations and technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time he collects classic pinball and arcade machines.')
 			resolve();
 			}, 5000);
 			});
@@ -336,7 +336,7 @@ infoTop:{
 				
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.')
+			bot.say('I\'m v.1.0, created in August 2016 by Hans Zetterstrom.\nHe used Smoochbot framework to get started and then customized the code from there.')
 			resolve();
 			}, 5000);
 			});
@@ -344,7 +344,7 @@ infoTop:{
 			return promise.then(function(){
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('I\'m not yet tied into an NLP framework so I am primarily menu-driven.\nI tie into Twilio for SMS.')
+			bot.say('\nI use Twilio to send SMS messages, and I\'m hosted on Heroku.')
 			resolve();
 			}, 5000);
 			});
@@ -352,7 +352,7 @@ infoTop:{
 			return promise.then(function(){
 				var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('\nMy code runs out of Heroku and my code is in github.')
+			bot.say('\nI\'m looking forward to getting smarter very soon. INIT.AI integration will provide NLP in my next version.')
 			resolve();
 			}, 5000);
 			});
@@ -360,7 +360,7 @@ infoTop:{
 			return promise.then(function(){
 				var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`)
+			bot.say('Tweet @HansZed and let him know we\'re talking.\n Click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`)
 			resolve();
 			}, 5000);
 			});
