@@ -306,7 +306,7 @@ infoTop:{
 			return promise.then(function(){
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.')
+			bot.say('I\'m not yet tied into an NLP framework so I am primarily menu-driven.\nI tie into Twilio for SMS.')
 			resolve();
 			}, 5000);
 			});
@@ -327,10 +327,17 @@ infoTop:{
 			}, 5000);
 			});
 			return promise.then(function(){
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			console.log("pointless promise");
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
 				console.log("I am in the last return");
 				return'menuTop';});	
 			
-			
+			});
 			});	
 			});	
 			});	
