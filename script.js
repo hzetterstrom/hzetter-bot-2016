@@ -453,7 +453,7 @@ nextMenu:{
 
 
 sendSMS: {
-	prompt: (bot) => bot.say('Ok, we do can that. Whatever you send in your next message to me, I\'ll relay it to Hans. Include your name and phone number so he can get back to you.'),
+	prompt: (bot) => bot.say('Ok, we do can that. Type the message to me and I\'ll relay it to Hans. Include your name and phone number so he can get back to you.'),
 	receive: (bot,message3) => {
 		
 	
@@ -461,7 +461,7 @@ sendSMS: {
  
 				// Find your account sid and auth token in your Twilio account Console.
 				
-				var client = twilio('SK9bb10c5f10fd26aeba606647bcc9e3c0', 'BhhuXf6lZq4NqgL6UpAhm5sbrChVii8I');
+				var client = twilio('AC3ab54f75d727117dded31bb4cc42fd46', '5df6d2dabe4ebd7412bcec6c646cd25a');
  
  
  
