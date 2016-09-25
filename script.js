@@ -222,7 +222,8 @@ thoughts: {
 				feed(urls[j], function(err, articles) {
 
 				// loop through the list of articles returned
-				for (var i = 0; i < articles.length; i++) {
+				//for (var i = 0; i < articles.length; i++) {
+				for (var i = 0; i < 2; i++) {
 		 
 				var title = articles[i].title;
 				var content = articles[i].content;
