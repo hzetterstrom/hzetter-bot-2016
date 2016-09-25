@@ -326,8 +326,9 @@ infoTop:{
 			resolve();
 			}, 5000);
 			});
-			
-		//	});
+			return promise.then(function(){
+				return('infotop');
+			});
 			
 			});	
 			});	
@@ -345,7 +346,7 @@ infoTop:{
 			
 			
 			
-			return('infotop');
+			
 			
 			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
