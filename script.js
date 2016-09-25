@@ -331,8 +331,9 @@ infoTop:{
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('contact') >= 0){
-				return bot.say(`%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
-			.then(() => 'info');
+			//	return bot.say(`%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)` ) 
+			//.then(() => 'info');
+			return('info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
 				
@@ -396,7 +397,9 @@ infoTop:{
 
 info: {
 
-prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
+//%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)
+//prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
+prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Contact info](reply:cinfo)`),
 
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
@@ -406,6 +409,10 @@ prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Han
 				return bot.say('Hans\' email is hans.zetterstrom@gmail.com')
 				.then(() => 'infoTop');
 				
+			} 
+			else if ( linnermenu.indexOf('cinfo') >= 0){
+				return bot.say('Download Hans\' contact info to your contact list here http://goo.gl/V2CrZR')
+				.then(() => 'infoTop');
 			}
 			else if ( linnermenu.indexOf('text') >= 0){
 			return('sendSMS');
