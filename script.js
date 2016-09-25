@@ -99,8 +99,9 @@ whereyoufrom: {
         var ureason = message.text;
         reason = ureason.toLowerCase();
 		
-		bot.say('I love ' + reason + '! So nice this time of year.')
+		return bot.say('I love ' + reason + '! So nice this time of year.')
 		.then(() => 'menuTop');
+		
 	}
 	
 
