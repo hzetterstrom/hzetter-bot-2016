@@ -314,7 +314,7 @@ infoTop:{
 			return promise.then(function(){
 				var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			bot.say('I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and my code is in github.')
+			bot.say('\nMy code runs out of Heroku and my code is in github.')
 			resolve();
 			}, 5000);
 			});
@@ -326,7 +326,8 @@ infoTop:{
 			resolve();
 			}, 5000);
 			});
-			
+			return promise.then(function(){
+				return'thoughts';});
 			
 			});	
 			});	
