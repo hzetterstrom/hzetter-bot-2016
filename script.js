@@ -327,6 +327,7 @@ infoTop:{
 			}, 5000);
 			});
 			return promise.then(function(){
+				console.log("I am in the last return");
 			infotop();
 			});
 			
