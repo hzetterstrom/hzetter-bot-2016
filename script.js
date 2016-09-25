@@ -327,7 +327,7 @@ infoTop:{
 			}, 5000);
 			});
 			return promise.then(function(){
-				return('infotop');
+			infotop();
 			});
 			
 			});	
