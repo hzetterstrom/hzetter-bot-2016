@@ -40,7 +40,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-            .then(() => bot.say('It\'s nice to meet you ' + name))
+            .then(() => bot.say('It\'s nice to meet you, ' + name + '.'))
                 .then(() => 'Reason');
         }
     },
@@ -399,7 +399,7 @@ info: {
 
 //%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)
 //prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
-prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Contact info](reply:cinfo)`),
+prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:cinfo)`),
 
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
