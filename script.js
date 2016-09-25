@@ -53,21 +53,28 @@ Reason: {
         reason = ureason.toLowerCase();
 		
 				
-            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
+            if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are' || 'sure') >= 0){
 			 var uname = bot.getProp('name')
 			 
 			 var promise = new Promise(function(resolve, reject) {
-			setTimeout(function () {
-			bot.say(`Excellent ${uname}, It\'s nice to meet a mutual acquaintance.`)
+			setTimeout(function (uname) {
+				console.log("mutual acquaintance");
+			bot.say('Excellent ${uname}, It\'s nice to meet a mutual acquaintance.');
 			resolve();
 			}, 5000);
 			});
 			return promise.then(function(){
-			console.log('done with Reason promise');
-			return'menuTop';	
-			}); 
-			 
-			 
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			console.log("pointless promise");
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				console.log('done with start promise');
+				return'menutop';});	
+			});
+
 			 
 			//.then((uname) => bot.say(`Excellent ${uname}, It\'s nice to meet a mutual acquaintance.`))
 			//return('menuTop');
