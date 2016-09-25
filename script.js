@@ -326,16 +326,8 @@ infoTop:{
 			resolve();
 			}, 5000);
 			});
-			return promise.then(function(){
-			var promise = new Promise(function(resolve, reject) {
-			setTimeout(function () {
-			return('infoTop');
-			resolve();
-			}, 5000);
-			});
-			return promise.then(function(){
-			});
-			});
+			
+		//	});
 			
 			});	
 			});	
@@ -343,10 +335,17 @@ infoTop:{
 				
 				
 		//	 ') my
+		//	var promise = new Promise(function(resolve, reject) {
+		//	setTimeout(function () {
+		//		console.log("i am james");
+		//	bot.say('Hi! I\'m James. I\'m Hans\' virtual assistant. Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
+		//	resolve();
+		//	}, 5000);
+		//	});
 			
 			
 			
-			
+			return('infotop');
 			
 			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
