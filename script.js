@@ -92,25 +92,39 @@ quickIntro: {
 
 whereyoufrom: {
 	
-	//bot.getProp('name');
-	//var uname = bot.getProp('name')
-	prompt: (bot,name) => bot.say(`Where are you from?`),	
+	
+	prompt: (bot,name) => bot.say(`Where are you from? (or skip)`),	
 	receive: (bot, message) => {
         var ureason = message.text;
         reason = ureason.toLowerCase();
 		
-		return bot.say('I love ' + reason + '! So nice this time of year.')
-		.then(() => 'menuTop');
-		
+		if( reason.indexOf('skip') >= 0){
+			return('menuTop');
+			} else {
+			return bot.say('I love ' + reason + '! So nice this time of year.')
+			.then(() => 'whatyoudo');
+			}
 	}
-	
-
-//return('menuTop');
 	
 },
 
-//bot.say('I love ${reason}! So nice this time of year.')
-
+whatyoudo: {
+	
+	
+	prompt: (bot,name) => bot.say(`What do you do for work? (or skip)`),	
+	receive: (bot, message) => {
+        var ureason = message.text;
+        reason = ureason.toLowerCase();
+		
+		if( reason.indexOf('skip') >= 0){
+			return('menuTop');
+		} else {
+		return bot.say('OK, thanks. I\'ll share that with Hans.')
+		.then(() => 'menuTop');
+		}
+	}
+	
+},
 	
 menuTop: {
 	
