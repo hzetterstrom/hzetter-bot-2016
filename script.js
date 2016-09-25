@@ -328,8 +328,8 @@ infoTop:{
 			});
 			return promise.then(function(){
 				console.log("I am in the last return");
-			infotop();
-			});
+				return'menuTop';});	
+			
 			
 			});	
 			});	
