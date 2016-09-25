@@ -399,7 +399,7 @@ info: {
 
 //%[Main Menu](reply:menu) %[Email Hans](reply:email) %[Text Hans](reply:text)
 //prompt: (bot) => bot.say( 'Great, he\'d love to hear from you. Here\'s' + '%[Hans\' contact info\:](http://goo.gl/V2CrZR)'),
-prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:cinfo)`),
+prompt: (bot) => bot.say( 'Hans would love to hear from you. Choose how you\'d like to get in touch.' + `%[Email Hans](reply:email) %[Text Hans](reply:text) %[Add to Contacts](reply:cinfo) %[Main Menu](reply:menu)`),
 
  			receive: (bot, message2) => {
 			var innermenu = message2.text;
