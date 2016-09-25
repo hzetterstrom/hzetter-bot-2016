@@ -48,7 +48,7 @@ Reason: {
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
 			 var uname = bot.getProp('name')
-			.then((uname) => bot.say(`Excellent ${uname}, It\'s nice to meet a mutual acquaintance.`))
+			return bot.say(`Excellent ${uname}, It\'s nice to meet a mutual acquaintance.`)
 			.then(() => 'menuTop');
              } else {
 			 bot.say('![](https://pbs.twimg.com/profile_images/760110879979499520/HpX5-Q1K.jpg)')
