@@ -81,7 +81,7 @@ quickIntro: {
 	
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are') >= 0){
-			return('whereyoufrom()');
+			return('whereyoufrom');
 			} else {
 			return('menuTop');
 			}
