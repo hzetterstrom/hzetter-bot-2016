@@ -128,7 +128,7 @@ whatyoudo: {
 	
 menuTop: {
 	
-		prompt: (bot,name) => bot.say('What more can I tell you about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
+		prompt: (bot,name) => bot.say('What would you like to know about Hans?' + `%[His Work](reply:work) %[His Thoughts](reply:thoughts) %[More Info](reply:info)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
