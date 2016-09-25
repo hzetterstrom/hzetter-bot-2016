@@ -2,7 +2,6 @@
 
 const Script = require('smooch-bot').Script;
 var reason;
-var e = 0;
 
 module.exports = new Script({
     processing: {
@@ -88,7 +87,6 @@ Reason: {
 			setTimeout(function () {
 				console.log('intro stuff');
 			bot.say('OK. Well since you\'re not acquainted with him... Hans is an operations and technology leader. He advocates simplicity and loves to make complex things more simple. He has a genuine dislike for process for the sake of it. In his spare time (not exactly copious) he collects classic pinball and arcade machines.')
-			//bot.say('Before we begin, tell me a little about yourself. What\'s your name?');
 			resolve();
 			}, 5000);
 			});
@@ -176,7 +174,8 @@ menuTop: {
 			return bot.say('Hans has worked on some cool things. Check out what he\'s worked on most recently.')
 			.then(() => 'experience');
 			} else if ( lmenu.indexOf('thoughts') >= 0){
-			return('thoughts');
+			return bot.say('See what Hans has been talking about.')
+			.then(() => 'thoughts');
 			}else if ( lmenu.indexOf('start') >= 0){
 			return('start');
 			}  else {
@@ -196,11 +195,9 @@ experience: {
         var lmenu = menu.toLowerCase();
 			
 			if ( lmenu.indexOf('skills') >= 0){
-			e++;
 			return  bot.say(`Hans considers his primary skills to be:\n•	Team Leadership & Development\n•	Strategic Planning\n•	Enterprise Architecture\n•	Driving Innovation\n•	Agile Methodologies`)
 			.then(() => 'experience');
 			} else if ( lmenu.indexOf('projects') >= 0){
-			e++;
 			return bot.say(`Hans\' latest experiences include:\n`)	
 			.then(() => bot.say(`•	Created Kanban room to visually represent organizational decisions and KPI performance. \n`))
 			.then(() => bot.say(`•	Implemented Agile SDLC methodologies  and initiated a team culture devoted to the Agile Manifesto.\n`))
@@ -209,11 +206,9 @@ experience: {
 				
 				
 			} else if ( lmenu.indexOf('resume') >= 0){
-			e++;
 			return bot.say(`%[Hans\' resume](https://goo.gl/x5fqqo)`)
 			.then(() => 'experience');		
-			} else if ( lmenu.indexOf('linkedin') >= 0){
-			e++;	
+			} else if ( lmenu.indexOf('linkedin') >= 0){	
 			return bot.say('Connect with Hans' + `%[LinkedIn](https://www.linkedin.com/in/hanszetterstrom)`)
 			.then(() => 'experience');
 			}
@@ -233,8 +228,7 @@ thoughts: {
 	//his articles/writing
 	//hans' linkedin
 	
-	
-	prompt: (bot,name) => bot.say('See what Hans has been talking about' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Main Menu](reply:menu)`), 
+	prompt: (bot,name) => bot.say('Choose an option or go back to the main menu.' + `%[Latest tweets](reply:tweets) %[Latest articles](reply:articles) %[Main Menu](reply:menu)`), 
 			
 		receive: (bot, message) => {
         var menu = message.text;
@@ -387,27 +381,12 @@ infoTop:{
 			});	
 			});	
 			});	
-				
-				
-		//	 ') my
-		//	var promise = new Promise(function(resolve, reject) {
-		//	setTimeout(function () {
-		//		console.log("i am james");
-		//	bot.say('Hi! I\'m James. I\'m Hans\' virtual assistant. Hans sends his regards and his apologies he couldn\'t be with us at the moment.');
-		//	resolve();
-		//	}, 5000);
-		//	});
-			
-			
-			
-			
-			
+	
 			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
 			} else {
-				
 				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
 				.then(() => 'infoTop');
 			}
