@@ -54,11 +54,12 @@ Reason: {
 		
 				
             if( reason.indexOf('yes' || 'yea' || 'yeah' || 'y' || 'yep' || 'we are' || 'sure') >= 0){
-			 var uname = bot.getProp('name')
+			 
 			 
 			 var promise = new Promise(function(resolve, reject) {
-			setTimeout(function (uname) {
+			setTimeout(function () {
 				console.log("mutual acquaintance");
+			var uname = bot.getProp('name')
 			bot.say('Excellent ${uname}, It\'s nice to meet a mutual acquaintance.');
 			resolve();
 			}, 5000);
@@ -71,8 +72,8 @@ Reason: {
 			}, 5000);
 			});
 			return promise.then(function(){
-				console.log('done with start promise');
-				return'menutop';});	
+				console.log('done with Reason promise');
+				return'menuTop';});	
 			});
 
 			 
