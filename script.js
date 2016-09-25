@@ -472,7 +472,7 @@ sendSMS: {
 				from: '312-313-4267',
 				body: message3.text
 				});
-			console.log('Sent text with ' + message3)
+			console.log('Sent text with ' + message3.text)
 			return bot.say('OK. I sent a text to Hans. He usually replies pretty quickly.')
 			.then(() => 'infoTop');
 	}
