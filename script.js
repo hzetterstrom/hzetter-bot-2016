@@ -218,7 +218,17 @@ thoughts: {
 				//.then(() => 'thoughts');
 				} //  end inner for loop
 			}); // end call to feed (feed-read) method
-			return('thoughts');
+			
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			console.log('out of articles');
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				return'thoughts';});	
+			
+			
 			} // end urls for loop
 				return('thoughts');
 				} else if ( lmenu.indexOf('linkedin') >= 0){
