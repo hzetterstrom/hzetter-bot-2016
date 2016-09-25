@@ -71,10 +71,17 @@ Reason: {
 			}, 5000);
 			});
 			return promise.then(function(){
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			console.log("pointless promise");
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
 			console.log('outside reason promise');
 			return'quickIntro';
 			});	
-			 
+			 });
 			 }
 		   } 
 	
