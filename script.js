@@ -295,9 +295,37 @@ infoTop:{
 			.then(() => 'info');
 			} 
 			else if ( lmenu.indexOf('james') >= 0){
-			bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework. I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
+				
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('I\'m version 1.0, I was created in August 2016 by Hans Zetterstrom.\nI was created and then customized on Smooch using the Smoochbot framework.')
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.')
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				return'thoughts';
+				
+				
+			});	
+				
+				
+			});	
+			
+				
+				
+		//	 I\'m not yet tied into an NLP framework so I am essentially menu-driven.\nI tie into Twilio for SMS.\nMy code runs out of Heroku and the code itself is in github.') 
 			bot.say('Why not tweet @HansZed and let him know we\'re talking?\n Just click this link and I\'ll create a tweet for you.' + `%[Tweet Hans](https://goo.gl/TzFtyP)`)
 			return('infoTop');
+			
+			
+			
 			} else if ( lmenu.indexOf('menu') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('main') >= 0){
