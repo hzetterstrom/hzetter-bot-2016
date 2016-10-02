@@ -6,10 +6,13 @@ var reason
 
 // Initializing Smooch
 const smooch = new SmoochCore({
-    keyId: SMOOCH_KEY_ID,
-    secret: SMOOCH_SECRET,
+//    keyId: SMOOCH_KEY_ID,
+//    secret: SMOOCH_SECRET,
     scope: 'hzetter-bot-2016'
 });
+
+//var client = require('twilio')();
+				 
 
 
 module.exports = new Script({
