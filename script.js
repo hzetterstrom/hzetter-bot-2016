@@ -288,6 +288,8 @@ thoughts: {
 				
 //			// Carousel STARTS	
 //smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+
+var promise = new Promise(function(resolve, reject) {
 smooch.conversations.sendMessage({
 
   role: 'appMaker',
@@ -317,14 +319,16 @@ smooch.conversations.sendMessage({
             uri: 'https://goo.gl/rnkPq9'
         }]
     }]
-})
-
-.then(() => {
-console.log("something is going on here")
-return('thoughts')
 });
+			return promise.then(function(){
+				return'thoughts';
+});	
+			
+			
 
-}			
+
+});
+}		
 }
 
 	
