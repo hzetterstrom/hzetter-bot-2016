@@ -287,8 +287,8 @@ thoughts: {
 			} else if ( lmenu.indexOf('tweet') >= 0){
 				
 //			// Carousel STARTS	
-smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-//smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 
   role: 'appMaker',
     items: [{
