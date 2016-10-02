@@ -288,7 +288,7 @@ thoughts: {
 				
 //			// Carousel STARTS	
 //smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+smooch.conversations.sendMessage('e3dbc66bda604e1d39b4d16d', {
 
   role: 'appMaker',
     items: [{
