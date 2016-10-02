@@ -316,6 +316,7 @@ thoughts: {
 			
 //			// Carousel STARTS	
 //	//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //	SmoochCore.ConversationsApi.prototype.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //    role: 'appMaker',
 //    items: [{
@@ -351,7 +352,7 @@ thoughts: {
 //    }]
 ////}).then(() => {
 ////    // async code
-//});
+});
 //// ENDS
 			
 			var promise = new Promise(function(resolve, reject) {
