@@ -2,7 +2,15 @@
 
 const Script = require('smooch-bot').Script;
 var SmoochCore = require('smooch-core');
-var reason;
+var reason
+
+// Initializing Smooch
+const smooch = new SmoochCore({
+    keyId: SMOOCH_KEY_ID,
+    secret: SMOOCH_SECRET,
+    scope: 'hzetter-bot-2016'
+});
+
 
 module.exports = new Script({
     processing: {
@@ -316,7 +324,7 @@ thoughts: {
 			
 //			// Carousel STARTS	
 //	//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+	smooch.conversations.sendMessage('SMOOCH_APP_TOKEN', {
 //	SmoochCore.ConversationsApi.prototype.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //    role: 'appMaker',
 //    items: [{
