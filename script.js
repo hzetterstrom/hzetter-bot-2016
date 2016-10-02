@@ -4,14 +4,9 @@ const Script = require('smooch-bot').Script;
 var SmoochCore = require('smooch-core');
 var reason
 
-// Initializing Smooch
-const smooch = new SmoochCore({
-    keyId: 'app_57eb04b34d6b8759019f5d49',
-    secret: 'ZVzLzgbU61KiDJ54lOc4yKr8',
-    scope: 'hzetter-bot-2016'
+var smooch = new SmoochCore({
+    appToken: '7rmh6j05pm8dtjff9atjnl9lx'
 });
-
-//var client = require('twilio')();
 				 
 
 
