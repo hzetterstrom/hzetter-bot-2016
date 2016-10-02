@@ -325,7 +325,14 @@ thoughts: {
 			
 			
 			
-//			// Carousel STARTS	
+
+			
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+			
+			
+			//			// Carousel STARTS	
 	//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //	SmoochCore.ConversationsApi.prototype.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
@@ -366,9 +373,9 @@ thoughts: {
 });
 //// ENDS
 			
-			var promise = new Promise(function(resolve, reject) {
-			setTimeout(function () {
-			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+			
+			
+			
 			resolve();
 			}, 5000);
 			});
