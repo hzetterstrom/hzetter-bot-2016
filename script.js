@@ -319,6 +319,7 @@ smooch.conversations.sendMessage('e3dbc66bda604e1d39b4d16d', {
     }]
 }).then(() => {
 console.log("something is going on here")
+return('thoughts')
 });
 
 }			
