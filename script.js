@@ -1,14 +1,8 @@
+
 'use strict';
 
 const Script = require('smooch-bot').Script;
-var SmoochCore = require('smooch-core');
-var reason
-
-var smooch = new SmoochCore({
-    appToken: '7rmh6j05pm8dtjff9atjnl9lx'
-});
-				 
-
+var reason;
 
 module.exports = new Script({
     processing: {
@@ -240,8 +234,8 @@ thoughts: {
 		receive: (bot, message) => {
         var menu = message.text;
         var lmenu = menu.toLowerCase();
-		
-		if ( lmenu.indexOf('article') >= 0){
+			
+			if ( lmenu.indexOf('article') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
 				"https://goo.gl/iscgRo"
@@ -285,53 +279,48 @@ thoughts: {
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('tweet') >= 0){
-				
-//			// Carousel STARTS	
-//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-
-var promise = new Promise(function(resolve, reject) {
-smooch.conversations.sendMessage({
-
-  role: 'appMaker',
-    items: [{
-        title: 'HansZed',
-        description: 'RT @VentureBeat: 7 surprising facts about open rates for push notifications https://t.co/p7e8T9hNhR',
-        mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
-        actions: [{
-          text: 'Tweet 1',
-            type: 'link',
-            uri: 'https://twitter.com/hanszed/status/781869693015580673'
-        }, {
-           text: 'Follow Hans',
-           type: 'link',
-           uri: 'https://goo.gl/rnkPq9'
-        }]
-    }, {
-        title: 'Tweet 2',
-        description: 'RT @sanguit: What the uber-lyft war teaches us about building the next uber for x https://t.co/vAMYqhXwhj #platformrevolution',
-       mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
-        actions: [{
-            text: 'Select',
-			  uri: 'https://twitter.com/hanszed/status/781542679779872768'
-        }, {
-            text: 'Follow Hans',
-            type: 'link',
-            uri: 'https://goo.gl/rnkPq9'
-        }]
-    }]
-});
-			return promise.then(function(){
-				return'thoughts';
-});	
+				var feed = require('feed-read'),  // require the feed-read module
+				urls = [
+				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
 			
-			
-
-
-});
-}		
-}
-
+				]; // RSS Feeds can be comma delimited
 	
+	
+				// loop through our list of RSS feed urls
+				for (var j = 0; j < urls.length; j++) {
+				
+					
+				// fetch rss feed for the url:
+				feed(urls[j], function(err, articles) {
+
+				// loop through the list of articles returned
+				for (var i = 0; i < articles.length; i++) {
+				//for (var i = 0; i < 3; i++) {
+				var content = articles[i].content;
+				var link = articles[i].link;
+
+			 bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
+			 
+				} //  end inner for loop
+			}); // end call to feed (feed-read) method
+			var promise = new Promise(function(resolve, reject) {
+			setTimeout(function () {
+			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+			resolve();
+			}, 5000);
+			});
+			return promise.then(function(){
+				return'thoughts';});	
+			
+			} // end urls for loop
+			} else {
+				
+				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
+				.then(() => 'thoughts');
+			}
+		
+			return('thoughts');
+	}		
 },
 
 infoTop:{
@@ -503,6 +492,3 @@ waitHere: {
     }
 });
 
-		
-		
-	
