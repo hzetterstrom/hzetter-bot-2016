@@ -1,7 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-//require('smooch');
+var Smooch = require('smooch');
 var reason;
 
 module.exports = new Script({
