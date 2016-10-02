@@ -240,8 +240,8 @@ thoughts: {
 		receive: (bot, message) => {
         var menu = message.text;
         var lmenu = menu.toLowerCase();
-			
-			if ( lmenu.indexOf('article') >= 0){
+		
+		if ( lmenu.indexOf('article') >= 0){
 				var feed = require('feed-read'),  // require the feed-read module
 				urls = [
 				"https://goo.gl/iscgRo"
@@ -285,62 +285,18 @@ thoughts: {
 			} else if ( lmenu.indexOf('main') >= 0){
 				return('menuTop');
 			} else if ( lmenu.indexOf('tweet') >= 0){
-				var feed = require('feed-read'),  // require the feed-read module
-				urls = [
-				"https://zapier.com/engine/rss/1617716/hanszed-tw1"
 				
-				//https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE
-			
-				]; // RSS Feeds can be comma delimited
-				
-				
-				// loop through our list of RSS feed urls
-				for (var j = 0; j < urls.length; j++) {
-				
-					
-				// fetch rss feed for the url:
-				feed(urls[j], function(err, articles) {
+//			// Carousel STARTS	
+smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+//smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 
-				// loop through the list of articles returned
-				for (var i = 0; i < articles.length; i++) {
-				//for (var i = 0; i < 3; i++) {
-				var content = articles[i].content;
-				var link = articles[i].link;
-	
-
-	
-// ENDS 
-	
-				
-
-			 bot.say("@HansZed tweeted " +  content + "\n"+ link + "\n")
-			 
-				} //  end inner for loop
-			}); // end call to feed (feed-read) method
-			
-			
-			
-
-			
-			var promise = new Promise(function(resolve, reject) {
-			setTimeout(function () {
-			bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-			
-			
-			//			// Carousel STARTS	
-	//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-//	SmoochCore.ConversationsApi.prototype.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-    role: 'appMaker',
+  role: 'appMaker',
     items: [{
         title: 'HansZed',
         description: 'RT @VentureBeat: 7 surprising facts about open rates for push notifications https://t.co/p7e8T9hNhR',
         mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
         actions: [{
           text: 'Tweet 1',
- // //          type: 'postback',
-////            payload: 'TACOS'
-////			  text: 'Tweet 1',
             type: 'link',
             uri: 'https://twitter.com/hanszed/status/781869693015580673'
         }, {
@@ -354,9 +310,7 @@ thoughts: {
        mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
         actions: [{
             text: 'Select',
-////            type: 'link',
 			  uri: 'https://twitter.com/hanszed/status/781542679779872768'
-////            payload: 'RAMEN'
         }, {
             text: 'Follow Hans',
             type: 'link',
@@ -364,29 +318,13 @@ thoughts: {
         }]
     }]
 }).then(() => {
-////    // async code
 console.log("something is going on here")
 });
-//// ENDS
-			
-			
-			
-			
-			resolve();
-			}, 5000);
-			});
-			return promise.then(function(){
-				return'thoughts';});	
-			
-			} // end urls for loop
-			} else {
-				
-				return bot.say(`Sorry, Hans hasn't taught me how to do that yet, but he\'ll no doubt get right on it`)
-				.then(() => 'thoughts');
-			}
-		
-			return('thoughts');
-	}		
+
+}			
+}
+
+	
 },
 
 infoTop:{
