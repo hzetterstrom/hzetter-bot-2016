@@ -370,6 +370,7 @@ thoughts: {
     }]
 }).then(() => {
 ////    // async code
+console.log("something is going on here")
 });
 //// ENDS
 			
