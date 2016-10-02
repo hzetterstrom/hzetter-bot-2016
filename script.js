@@ -326,8 +326,8 @@ thoughts: {
 			
 			
 //			// Carousel STARTS	
-	smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-//	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+	//smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+	smooch.conversations.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //	SmoochCore.ConversationsApi.prototype.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
     role: 'appMaker',
     items: [{
@@ -335,7 +335,7 @@ thoughts: {
         description: 'RT @VentureBeat: 7 surprising facts about open rates for push notifications https://t.co/p7e8T9hNhR',
         mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
         actions: [{
-          text: 'Select',
+          text: 'Tweet 1',
  // //          type: 'postback',
 ////            payload: 'TACOS'
 ////			  text: 'Tweet 1',
@@ -361,7 +361,7 @@ thoughts: {
             uri: 'https://goo.gl/rnkPq9'
         }]
     }]
-////}).then(() => {
+}).then(() => {
 ////    // async code
 });
 //// ENDS
