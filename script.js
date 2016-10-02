@@ -6,8 +6,8 @@ var reason
 
 // Initializing Smooch
 const smooch = new SmoochCore({
-//    keyId: SMOOCH_KEY_ID,
-//    secret: SMOOCH_SECRET,
+    keyId: app_57eb04b34d6b8759019f5d49,
+    secret: ZVzLzgbU61KiDJ54lOc4yKr8,
     scope: 'hzetter-bot-2016'
 });
 
