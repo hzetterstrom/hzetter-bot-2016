@@ -305,6 +305,7 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
+			console.log("carousel")
 			//bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
 		var smooch = require('smooch')	
 		smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
