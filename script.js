@@ -305,7 +305,7 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-				
+			var smooch = require('smooch')	
 			smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
 			text: 'Just put some vinegar on it',
 			role: 'appUser'
