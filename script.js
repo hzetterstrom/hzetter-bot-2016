@@ -305,38 +305,43 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
-			console.log("carousel")
-			//bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
-		var smooch = require('smooch')	
-		smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
-		role: 'appMaker',
-    items: [{
-        title: 'HansZed',
-        description: 'RT @VentureBeat: 7 surprising facts about open rates for push notifications https://t.co/p7e8T9hNhR',
-        mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
-        actions: [{
-          text: 'Tweet 1',
-            type: 'link',
-            uri: 'https://twitter.com/hanszed/status/781869693015580673'
-        }, {
-           text: 'Follow Hans',
-           type: 'link',
-           uri: 'https://goo.gl/rnkPq9'
-        }]
-    }, {
-        title: 'Tweet 2',
-        description: 'RT @sanguit: What the uber-lyft war teaches us about building the next uber for x https://t.co/vAMYqhXwhj #platformrevolution',
-       mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
-        actions: [{
-            text: 'Select',
-			  uri: 'https://twitter.com/hanszed/status/781542679779872768'
-        }, {
-            text: 'Follow Hans',
-            type: 'link',
-            uri: 'https://goo.gl/rnkPq9'
-        }]
-		}]
-		})
+				
+			smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
+			text: 'Just put some vinegar on it',
+			role: 'appUser'
+			})
+//			console.log("carousel")
+//			//bot.say('You can follow Hans on Twitter by clicking this link ' + `%[Follow Hans](https://goo.gl/rnkPq9)`);
+//		var smooch = require('smooch')	
+//		smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
+//		role: 'appMaker',
+//   items: [{
+//        title: 'HansZed',
+//       description: 'RT @VentureBeat: 7 surprising facts about open rates for push notifications https://t.co/p7e8T9hNhR',
+//        mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
+//        actions: [{
+//          text: 'Tweet 1',
+//            type: 'link',
+//            uri: 'https://twitter.com/hanszed/status/781869693015580673'
+//        }, {
+//           text: 'Follow Hans',
+//           type: 'link',
+//           uri: 'https://goo.gl/rnkPq9'
+//        }]
+//    }, {
+//        title: 'Tweet 2',
+//        description: 'RT @sanguit: What the uber-lyft war teaches us about building the next uber for x https://t.co/vAMYqhXwhj #platformrevolution',
+//       mediaUrl: 'https://drive.google.com/open?id=0B8wT0xYwvmaHYnBnaUtPZHdNMlE',
+//        actions: [{
+//            text: 'Select',
+//			  uri: 'https://twitter.com/hanszed/status/781542679779872768'
+//        }, {
+//            text: 'Follow Hans',
+//            type: 'link',
+//            uri: 'https://goo.gl/rnkPq9'
+//        }]
+//		}]
+//		})
 			
 			
 			
