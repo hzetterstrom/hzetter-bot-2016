@@ -306,7 +306,8 @@ thoughts: {
 			var promise = new Promise(function(resolve, reject) {
 			setTimeout(function () {
 			var smooch = require('smooch')	
-			smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
+			//smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
+			smooch.appUsers.sendMessage({
 			text: 'Just put some vinegar on it',
 			role: 'appUser'
 			})
