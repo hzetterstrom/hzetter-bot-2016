@@ -307,7 +307,7 @@ thoughts: {
 			setTimeout(function () {
 			var smooch = require('smooch')	
 			//smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
-			smooch.appUsers.sendMessage({
+			smooch.appUsers.sendMessage(userId, {
 			text: 'Just put some vinegar on it',
 			role: 'appUser'
 			})
