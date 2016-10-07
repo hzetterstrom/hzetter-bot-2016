@@ -312,7 +312,7 @@ thoughts: {
 			text: 'Just put some vinegar on it',
 			role: 'appUser'
 			})
-//			console.log("carousel")
+			console.log("carousel")
 //		var smooch = require('smooch')	
 //		smooch.appUsers.sendMessage('7rmh6j05pm8dtjff9atjnl9lx', {
 //		role: 'appMaker',
