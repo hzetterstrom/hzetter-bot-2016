@@ -39,8 +39,11 @@ module.exports = new Script({
     askName: {
         prompt: (bot) => bot.say('Before we begin, tell me a little about yourself. What\'s your name?'),
         receive: (bot, message) => {
-            const name = message.text;
-            return bot.setProp('name', name)
+            const tname = message.text;
+            var tname2 = name.toLowerCase();
+            var tname3 = name2.replace("my name is", "");
+            tname3 = name2.replace("I\' called", "");
+            return bot.setProp('tname3', name)
             .then(() => bot.say('It\'s nice to meet you, ' + name + '.'))
                 .then(() => 'Reason');
         }
