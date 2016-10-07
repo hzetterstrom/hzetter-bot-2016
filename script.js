@@ -44,7 +44,7 @@ module.exports = new Script({
             if( name.indexOf('name') >= 0){
             name = name.replace("my name is", "");
             } else if( name.indexOf('called') >= 0){
-            name = name.replace("I\'m called", "");
+            name = name.replace(`I\'m called`, "");
             }
             return bot.setProp('name', name)
             .then(() => bot.say('It\'s nice to meet you, ' + name + '.'))
