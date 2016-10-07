@@ -41,8 +41,11 @@ module.exports = new Script({
         receive: (bot, message) => {
             var name = message.text;
             name = name.toLowerCase();
+            if( name.indexOf('name') >= 0){
             name = name.replace("my name is", "");
+            } else if( name.indexOf('called') >= 0){
             name = name.replace("I\'m called", "");
+            }
             return bot.setProp('name', name)
             .then(() => bot.say('It\'s nice to meet you, ' + name + '.'))
                 .then(() => 'Reason');
