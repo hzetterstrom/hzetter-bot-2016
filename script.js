@@ -309,7 +309,7 @@ thoughts: {
 			var Smooch = require('smooch')	
 			Smooch.init({appToken: '7rmh6j05pm8dtjff9atjnl9lx'})
 			smooch.appUsers.sendMessage(userId, {
-			console.log("carousel" + userId)
+			//console.log("carousel" + userId)
 			//text: 'Just put some vinegar on it',
 			//role: 'appUser'
 			})
