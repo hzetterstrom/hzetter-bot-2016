@@ -305,7 +305,8 @@ thoughts: {
 			}); // end call to feed (feed-read) method
 			var promise = new Promise(function(resolve, reject) {
 			//setTimeout(function () {
-			//var smooch = require('smooch')	
+			var smooch = require('smooch')	
+			Smooch.init({appToken: '7rmh6j05pm8dtjff9atjnl9lx'});
 			//smooch.appUsers.sendMessage('c7f6e6d6c3a637261bd9656f', {
 			//smooch.appUsers.sendMessage(userId, {
 			//text: 'Just put some vinegar on it',
